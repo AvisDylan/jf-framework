@@ -1,0 +1,25 @@
+// Created by Avis on 01/09/2026
+
+#ifndef JF_FRAMEWORK_SERVER_H
+#define JF_FRAMEWORK_SERVER_H
+
+#include <stdint.h>
+#include <netinet/in.h>
+
+typedef struct {
+   int32_t sockfd;
+   int32_t port; 
+   struct sockaddr_in address;
+} Server;
+
+Server* jf_CreateServer(int32_t port);
+
+uint32_t jf_Listen(Server* server);
+
+uint32_t jf_RunSever(Server* server);
+
+uint32_t jf_HandleClient(Server* server);
+
+void jf_DestroyServer(Server* server);
+
+#endif

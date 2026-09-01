@@ -1,0 +1,19 @@
+- [x] Create server server
+- [-] Create router
+- [ ] Dynamic routes
+- [-] Http parser
+- [ ] Middleware
+- [ ] Template engine
+- [ ] Static file server
+- [ ] TLS
+- [ ] Json
+- [ ] Config system
+- [ ] Error handling
+- [ ] Web sockets
+- [ ] Form data
+- [ ] Sessions
+- [ ] C++ API
+- [ ] Rust API
+- [ ] Python API
+- [ ] Go API
+
