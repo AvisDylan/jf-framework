@@ -8,15 +8,17 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(SOURCES 
     src/server.c
     src/router.c
+    src/http.c
 )
 
 set(HEADERS
     include/server.h
     include/router.h
+    include/http.h
 )
 
 add_library(jf-framework SHARED ${SOURCES} ${HEADERS})
 
-target_include_directories(jf-framework 
+target_include_directories(jf-framework PRIVATE 
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )

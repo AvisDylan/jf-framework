@@ -2,14 +2,14 @@
   "version": 6,
   "cmakeMinimumRequired": {
     "major": 4,
-    "minor": 30,
+    "minor": 3,
     "patch": 0
   },
   "configurePresets": [
     {
       "name": "base",
       "hidden": true,
-      "generator": "Unix Makefiles",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
@@ -19,13 +19,13 @@
       "name": "build-x86",
       "displayName": "Linux x86_64 (GCC)",
       "inherits": "base",
-      "toolchainFile": "${sourceDir}/toolchains/x86_64-linux-gnu.cmake"
+      "toolchainFile": "${sourceDir}/toolchains/linux-x86_64.cmake"
     },
     {
       "name": "build-arm",
-      "displayName": "Linux aarch64 (GCC cross)",
+      "displayName": "Linux aarch64 (GCC)",
       "inherits": "base",
-      "toolchainFile": "${sourceDir}/toolchains/aarch64-linux-gnu.cmake"
+      "toolchainFile": "${sourceDir}/toolchains/linux-arm64.cmake"
     }
   ],
   "buildPresets": [

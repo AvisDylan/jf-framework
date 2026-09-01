@@ -11,6 +11,7 @@
 #include <unistd.h>
 
 #include <arpa/inet.h>
+#include <http.h>
 #include <netinet/in.h>
 #include <server.h>
 #include <stddef.h>
@@ -118,12 +119,13 @@ uint32_t jf_HandleClient(Server* server) {
 
     printf("Received: %s\n", buffer);
 
-    const char* response = "HTTP/1.1 200 OK\r\n"
-                           "Content-Type: text/plain\r\n"
-                           "Content-Length: 13\r\n"
-                           "connection: close\r\n"
-                           "\r\n"
-                           "Hello, World!";
+    HttpRequest httpRequest;
+
+    if (!jf_ParseHttpRequest(&httpRequest, buffer, recieved)) {
+        // drop packet
+
+        return 1;
+    }
 }
 
 /**

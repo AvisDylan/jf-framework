@@ -47,6 +47,6 @@ typedef struct {
     size_t bodyCapacity;
 } HttpResponse;
 
-uint32_t jf_ParseHttpRequest(const HttpRequest* httpRequest);
+uint32_t jf_ParseHttpRequest(HttpRequest* httpRequest, const char* buffer, size_t length);
 
 #endif
