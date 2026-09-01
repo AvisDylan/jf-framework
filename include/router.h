@@ -1,16 +1,20 @@
-// Created by Avis on 01/09/2026
+/**
+ * @file router.h
+ *
+ * @author Avis
+ * */
 
 #ifndef JF_FRAMEWORK_ROUTER_H
 #define JF_FRAMEWOR_ROUTER_H
 
-#include <stdint.h>
 #include <http.h>
+#include <stdint.h>
 
 #define MAX_ROUTES 128
 
 typedef void (*route_handler_t)(const HttpRequest* request, HttpResponse* response);
 
-typedef struct{
+typedef struct {
     char method[8];
     char path[256];
     route_handler_t handler;

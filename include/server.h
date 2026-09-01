@@ -1,15 +1,19 @@
-// Created by Avis on 01/09/2026
+/**
+ * @file server.h
+ *
+ * @author Avis
+ * */
 
 #ifndef JF_FRAMEWORK_SERVER_H
 #define JF_FRAMEWORK_SERVER_H
 
-#include <stdint.h>
 #include <netinet/in.h>
+#include <stdint.h>
 
 typedef struct {
-   int32_t sockfd;
-   int32_t port; 
-   struct sockaddr_in address;
+    int32_t sockfd;
+    int32_t port;
+    struct sockaddr_in address;
 } Server;
 
 Server* jf_CreateServer(int32_t port);

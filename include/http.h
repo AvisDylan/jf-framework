@@ -1,4 +1,8 @@
-// Created by Avis on 01/09/2026
+/**
+ * @file http.h
+ *
+ * @author Avis
+ * */
 
 #ifndef JF_FRAMEWORK_HTTP_H
 #define JF_FRAMEWORK_HTTP_H
@@ -7,7 +11,7 @@
 #include <stdint.h>
 
 // https://www.rfc-editor.org/info/rfc2616/
-typedef struct{
+typedef struct {
     char method[8];
     char path[256];
     char version[16];
@@ -15,26 +19,26 @@ typedef struct{
     char host[256];
     char contentType[128];
     size_t contentLength;
-    struct{
+    struct {
         char name[64];
         char value[256];
     } headers[32];
     uint32_t headerCount;
     const char* body;
     size_t bodyLength;
-    struct{
+    struct {
         char key[32];
         char value[128];
     } params[32];
     uint32_t paramCount;
 } HttpRequest;
 
-typedef struct{
+typedef struct {
     uint32_t response;
     char reason[64];
     char contentType[128];
     size_t contentLength;
-    struct{
+    struct {
         char name[64];
         char value[256];
     } headers[32];
