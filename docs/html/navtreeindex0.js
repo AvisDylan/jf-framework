@@ -1,9 +1,20 @@
 var NAVTREEINDEX0 =
 {
-"dir_d44c64559bbebec7f509842c48db8b23.html":[1,0,0],
-"files.html":[1,0],
+"annotated.html":[1,0],
+"classes.html":[1,1],
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[2,0,1],
+"dir_d44c64559bbebec7f509842c48db8b23.html":[2,0,0],
+"files.html":[2,0],
+"http_8c.html":[2,0,1,0],
+"http_8h_source.html":[2,0,0,0],
 "index.html":[],
 "index.html":[0],
 "pages.html":[],
-"server_8h_source.html":[1,0,0,0]
+"router_8h_source.html":[2,0,0,1],
+"server_8c.html":[2,0,1,1],
+"server_8h_source.html":[2,0,0,2],
+"structHttpRequest.html":[1,0,0],
+"structHttpResponse.html":[1,0,1],
+"structRoute.html":[1,0,2],
+"structServer.html":[1,0,3]
 };

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>jf-framework: include/server.h Source File</title>
+<title>jf-framework: include/router.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(function(){initNavTree('server_8h_source.html','',''); });
+$(function(){initNavTree('router_8h_source.html','',''); });
 </script>
 <div id="container">
 <div id="doc-content">
@@ -88,44 +88,46 @@ $(function(){initNavTree('server_8h_source.html','',''); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">server.h</div></div>
+  <div class="headertitle"><div class="title">router.h</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Created by Avis on 01/09/2026</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef JF_FRAMEWORK_SERVER_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define JF_FRAMEWORK_SERVER_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef JF_FRAMEWORK_ROUTER_H</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define JF_FRAMEWOR_ROUTER_H</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;http.h&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structServer.html">    9</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>   int32_t sockfd;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>   int32_t port; </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>   <span class="keyword">struct </span>sockaddr_in address;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>} <a class="code hl_struct" href="structServer.html">Server</a>;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define MAX_ROUTES 128</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">typedef</span> void (*route_handler_t)(<span class="keyword">const</span> <a class="code hl_struct" href="structHttpRequest.html">HttpRequest</a>* request, <a class="code hl_struct" href="structHttpResponse.html">HttpResponse</a>* response);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structRoute.html">   13</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">char</span> method[8];</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">char</span> path[256];</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    route_handler_t handler;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>} <a class="code hl_struct" href="structRoute.html">Route</a>;</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><a class="code hl_struct" href="structServer.html">Server</a>* jf_CreateServer(int32_t port);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>uint32_t jf_Listen(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>uint32_t jf_RunSever(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> jf_CreateRouter(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>uint32_t jf_HandleClient(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> jf_RouterAdd(<span class="keyword">const</span> <span class="keywordtype">char</span>* method, <span class="keyword">const</span> <span class="keywordtype">char</span>* path, route_handler_t handler);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> jf_DestroyServer(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>uint32_t jf_RouterRoute(<span class="keyword">const</span> <a class="code hl_struct" href="structHttpRequest.html">HttpRequest</a>* request, <a class="code hl_struct" href="structHttpResponse.html">HttpResponse</a>* response);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astructServer_html"><div class="ttname"><a href="structServer.html">Server</a></div><div class="ttdef"><b>Definition</b> server.h:9</div></div>
+<div class="ttc" id="astructHttpRequest_html"><div class="ttname"><a href="structHttpRequest.html">HttpRequest</a></div><div class="ttdef"><b>Definition</b> http.h:10</div></div>
+<div class="ttc" id="astructHttpResponse_html"><div class="ttname"><a href="structHttpResponse.html">HttpResponse</a></div><div class="ttdef"><b>Definition</b> http.h:32</div></div>
+<div class="ttc" id="astructRoute_html"><div class="ttname"><a href="structRoute.html">Route</a></div><div class="ttdef"><b>Definition</b> router.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>include</b></li><li class="navelem"><b>server.h</b></li>
+    <li class="navelem"><b>include</b></li><li class="navelem"><b>router.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

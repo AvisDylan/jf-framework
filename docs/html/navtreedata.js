@@ -26,6 +26,10 @@ var NAVTREE =
 [
   [ "jf-framework", "index.html", [
     [ "JF Framework", "index.html", null ],
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ]
+    ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ]
     ] ]
@@ -34,7 +38,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"dir_d44c64559bbebec7f509842c48db8b23.html"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
