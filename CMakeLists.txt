@@ -19,6 +19,6 @@ set(HEADERS
 
 add_library(jf-framework SHARED ${SOURCES} ${HEADERS})
 
-target_include_directories(jf-framework PRIVATE 
+target_include_directories(jf-framework PUBLIC 
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )

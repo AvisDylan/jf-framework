@@ -110,9 +110,11 @@ uint32_t jf_HandleClient(Server* server) {
     char buffer[8192];
 
     size_t recieved = recv(server->sockfd, buffer, sizeof(buffer), 0);
+    
     if (recieved < 0) {
         return 1;
     }
+
     buffer[recieved] = '\0';
 
     // TODO add http parsing

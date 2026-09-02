@@ -1,0 +1,25 @@
+jf_ParseHttpRequest()
+        │
+        ├── 1. validate input
+        │
+        ├── 2. find request line
+        │
+        ├── 3. parse method
+        │
+        ├── 4. parse path
+        │
+        ├── 5. parse query string
+        │
+        ├── 6. parse HTTP version
+        │
+        ├── 7. parse headers
+        │
+        ├── 8. identify Host
+        │
+        ├── 9. identify Content-Type
+        │
+        ├── 10. identify Content-Length
+        │
+        ├── 11. locate body
+        │
+        └── 12. return success/error

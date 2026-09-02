@@ -1,7 +1,7 @@
 - [x] Create server server
 - [-] Create router
 - [ ] Dynamic routes
-- [-] Http parser
+- [x] Http parser
 - [ ] Middleware
 - [ ] Template engine
 - [ ] Static file server
