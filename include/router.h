@@ -20,10 +20,7 @@ typedef struct {
     route_handler_t handler;
 } Route;
 
+uint32_t jf_RouterAdd(const char* method, const char* path, const char* router, route_handler_t handler);
 void jf_CreateRouter(void);
-
-void jf_RouterAdd(const char* method, const char* path, route_handler_t handler);
-
-uint32_t jf_RouterRoute(const HttpRequest* request, HttpResponse* response);
 
 #endif
