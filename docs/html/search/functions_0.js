@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['jf_5fcreaterouter_0',['jf_CreateRouter',['../router_8c.html#a6e7918739a53e41bff96dc0025989448',1,'jf_CreateRouter(void):&#160;router.c'],['../router_8h.html#a6e7918739a53e41bff96dc0025989448',1,'jf_CreateRouter(void):&#160;router.c']]],
+  ['jf_5fcreateserver_1',['jf_CreateServer',['../server_8c.html#a60ff0dd1858b990919e39685e55b2b0f',1,'jf_CreateServer(int32_t port):&#160;server.c'],['../server_8h.html#a60ff0dd1858b990919e39685e55b2b0f',1,'jf_CreateServer(int32_t port):&#160;server.c']]],
+  ['jf_5fdestroyserver_2',['jf_DestroyServer',['../server_8c.html#aa9de4b54cc46cf2f9026fa6f6812913a',1,'jf_DestroyServer(Server *server):&#160;server.c'],['../server_8h.html#aa9de4b54cc46cf2f9026fa6f6812913a',1,'jf_DestroyServer(Server *server):&#160;server.c']]],
+  ['jf_5fhandleclient_3',['jf_HandleClient',['../server_8c.html#a17a6205bea04995df9e8baf5ca55cb53',1,'jf_HandleClient(Server *server):&#160;server.c'],['../server_8h.html#a17a6205bea04995df9e8baf5ca55cb53',1,'jf_HandleClient(Server *server):&#160;server.c']]],
+  ['jf_5flisten_4',['jf_Listen',['../server_8c.html#ae805514499fbf38e901db96d8962d1c5',1,'jf_Listen(Server *server):&#160;server.c'],['../server_8h.html#ae805514499fbf38e901db96d8962d1c5',1,'jf_Listen(Server *server):&#160;server.c']]],
+  ['jf_5fparsehttprequest_5',['jf_ParseHttpRequest',['../http_8c.html#aa7fec9353eaed3bbc4a10b33280654a4',1,'jf_ParseHttpRequest(HttpRequest *httpRequest, const char *buffer, size_t length):&#160;http.c'],['../http_8h.html#aa7fec9353eaed3bbc4a10b33280654a4',1,'jf_ParseHttpRequest(HttpRequest *httpRequest, const char *buffer, size_t length):&#160;http.c']]],
+  ['jf_5frouteradd_6',['jf_RouterAdd',['../router_8c.html#ac019e5e9a838c861c99aeffba9413788',1,'jf_RouterAdd(const char *method, const char *path, const char *router, route_handler_t handler):&#160;router.c'],['../router_8h.html#ac019e5e9a838c861c99aeffba9413788',1,'jf_RouterAdd(const char *method, const char *path, const char *router, route_handler_t handler):&#160;router.c']]],
+  ['jf_5frunsever_7',['jf_RunSever',['../server_8c.html#a488b9fabf8b05976229e6cec9f035fc1',1,'jf_RunSever(Server *server):&#160;server.c'],['../server_8h.html#a488b9fabf8b05976229e6cec9f035fc1',1,'jf_RunSever(Server *server):&#160;server.c']]]
+];

@@ -91,41 +91,46 @@ $(function(){initNavTree('server_8h_source.html','',''); });
   <div class="headertitle"><div class="title">server.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Created by Avis on 01/09/2026</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef JF_FRAMEWORK_SERVER_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define JF_FRAMEWORK_SERVER_H</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structServer.html">    9</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>   int32_t sockfd;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>   int32_t port; </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>   <span class="keyword">struct </span>sockaddr_in address;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>} <a class="code hl_struct" href="structServer.html">Server</a>;</div>
+<a href="server_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef JF_FRAMEWORK_SERVER_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define JF_FRAMEWORK_SERVER_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structServer.html">   13</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    int32_t sockfd;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    int32_t port;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">struct </span>sockaddr_in address;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>} <a class="code hl_struct" href="structServer.html">Server</a>;</div>
 </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><a class="code hl_struct" href="structServer.html">Server</a>* jf_CreateServer(int32_t port);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>uint32_t jf_Listen(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>uint32_t jf_RunSever(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_struct" href="structServer.html">Server</a>* <a class="code hl_function" href="server_8h.html#a60ff0dd1858b990919e39685e55b2b0f">jf_CreateServer</a>(int32_t port);</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>uint32_t jf_HandleClient(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>uint32_t <a class="code hl_function" href="server_8h.html#ae805514499fbf38e901db96d8962d1c5">jf_Listen</a>(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> jf_DestroyServer(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>uint32_t <a class="code hl_function" href="server_8h.html#a488b9fabf8b05976229e6cec9f035fc1">jf_RunSever</a>(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astructServer_html"><div class="ttname"><a href="structServer.html">Server</a></div><div class="ttdef"><b>Definition</b> server.h:9</div></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>uint32_t <a class="code hl_function" href="server_8h.html#a17a6205bea04995df9e8baf5ca55cb53">jf_HandleClient</a>(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">void</span> <a class="code hl_function" href="server_8h.html#aa9de4b54cc46cf2f9026fa6f6812913a">jf_DestroyServer</a>(<a class="code hl_struct" href="structServer.html">Server</a>* server);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aserver_8h_html_a17a6205bea04995df9e8baf5ca55cb53"><div class="ttname"><a href="server_8h.html#a17a6205bea04995df9e8baf5ca55cb53">jf_HandleClient</a></div><div class="ttdeci">uint32_t jf_HandleClient(Server *server)</div><div class="ttdef"><b>Definition</b> server.c:109</div></div>
+<div class="ttc" id="aserver_8h_html_a488b9fabf8b05976229e6cec9f035fc1"><div class="ttname"><a href="server_8h.html#a488b9fabf8b05976229e6cec9f035fc1">jf_RunSever</a></div><div class="ttdeci">uint32_t jf_RunSever(Server *server)</div><div class="ttdoc">Accept loop.</div><div class="ttdef"><b>Definition</b> server.c:85</div></div>
+<div class="ttc" id="aserver_8h_html_a60ff0dd1858b990919e39685e55b2b0f"><div class="ttname"><a href="server_8h.html#a60ff0dd1858b990919e39685e55b2b0f">jf_CreateServer</a></div><div class="ttdeci">Server * jf_CreateServer(int32_t port)</div><div class="ttdoc">Creates server struct.</div><div class="ttdef"><b>Definition</b> server.c:27</div></div>
+<div class="ttc" id="aserver_8h_html_aa9de4b54cc46cf2f9026fa6f6812913a"><div class="ttname"><a href="server_8h.html#aa9de4b54cc46cf2f9026fa6f6812913a">jf_DestroyServer</a></div><div class="ttdeci">void jf_DestroyServer(Server *server)</div><div class="ttdoc">Closes server and frees resources.</div><div class="ttdef"><b>Definition</b> server.c:140</div></div>
+<div class="ttc" id="aserver_8h_html_ae805514499fbf38e901db96d8962d1c5"><div class="ttname"><a href="server_8h.html#ae805514499fbf38e901db96d8962d1c5">jf_Listen</a></div><div class="ttdeci">uint32_t jf_Listen(Server *server)</div><div class="ttdoc">Opens listening socket.</div><div class="ttdef"><b>Definition</b> server.c:50</div></div>
+<div class="ttc" id="astructServer_html"><div class="ttname"><a href="structServer.html">Server</a></div><div class="ttdef"><b>Definition</b> server.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>include</b></li><li class="navelem"><b>server.h</b></li>
+    <li class="navelem"><b>include</b></li><li class="navelem"><a href="server_8h.html">server.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

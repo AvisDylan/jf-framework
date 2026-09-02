@@ -91,25 +91,69 @@ $(function(){initNavTree('http_8c.html','',''); });
   <div class="headertitle"><div class="title">http.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;http.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="http_8h_source.html">http.h</a>&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for http.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8c__incl.svg" width="312" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8c__incl.svg" width="340" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4dcae2073377eddb250467aca91535a9" id="r_a4dcae2073377eddb250467aca91535a9"><td class="memItemLeft"><a id="a4dcae2073377eddb250467aca91535a9" name="a4dcae2073377eddb250467aca91535a9"></a>
-uint32_t&#160;</td><td class="memItemRight"><b>jf_ParseHttpRequest</b> (const <a class="el" href="structHttpRequest.html">HttpRequest</a> *httpRequest)</td></tr>
+<tr class="memitem:aa7fec9353eaed3bbc4a10b33280654a4" id="r_aa7fec9353eaed3bbc4a10b33280654a4"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#aa7fec9353eaed3bbc4a10b33280654a4">jf_ParseHttpRequest</a> (<a class="el" href="structHttpRequest.html">HttpRequest</a> *httpRequest, const char *buffer, size_t length)</td></tr>
+<tr class="memdesc:aa7fec9353eaed3bbc4a10b33280654a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the HTTP request.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>victor</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="aa7fec9353eaed3bbc4a10b33280654a4" name="aa7fec9353eaed3bbc4a10b33280654a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7fec9353eaed3bbc4a10b33280654a4">&#9670;&#160;</a></span>jf_ParseHttpRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t jf_ParseHttpRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structHttpRequest.html">HttpRequest</a> *</td>          <td class="paramname"><span class="paramname"><em>httpRequest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses the HTTP request. </p>
+<dl class="section author"><dt>Authors</dt><dd>Avis, victor</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">httpRequest</td><td>HTTP request struct output param </td></tr>
+    <tr><td class="paramname">buffer</td><td>Raw buffer </td></tr>
+    <tr><td class="paramname">length</td><td>Length of raw buffer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if failure in parsing packet </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8c_aa7fec9353eaed3bbc4a10b33280654a4_icgraph.svg" width="454" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
 <div id="page-nav-resize-handle"></div>
