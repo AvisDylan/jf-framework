@@ -1,4 +1,17 @@
- ME.md st(.### Pull request guidelines
+# Contributing
+
+### Introduction
+
+Before anything make sure to have read the [README](./README.md) for instructions on building and an introduction to the project, the [TODO](./TODO.md) list and the documentation found at [Documentation](https://avisdylan.github.io/jf-framework/html/).
+
+### Coding style
+
+We use a unified C/C++ code style via [.clang-format](./.clang-format).
+- Formatting rules are found in [.clang-format](./.clang-format).
+- Most modern IDEs automatically pick up on the format file.
+- Run your IDEs auto format or use `clang-format -i` before committing.
+
+ ### Pull request guidelines
 
 - Keep pull requests small to make them easier to review by maintainers.
 - Document code properly, try to minimize inline comments and add Doxygen comments with `/** ... */`.
@@ -23,19 +36,8 @@ By submitting code to this repository, you agree that your contribution is licen
 ### Before you start
 
 **You must complete these steps before starting:**
-- Build the OS instructions are at [README](./README.md#how-to-build).
-- Run the OS in QEMU.
-- Familiarize yourself with the documentation found at [Documentation](https://avisdylan.github.io/blu-os/html/).
+- Build the library, instructions are at [README](./README.md#how-to-build).
+- Familiarize yourself with the documentation found at [Documentation](https://avisdylan.github.io/jf-framework/html/).
 - Familiarize yourself with the TODO list found at [TODO](./TODO.md).
 - Read over the codebase.
-- Fork the repo/.clang
-
--.tamrof)yle via [.tamrof-gnalc]yle
-
-We ngts u idoc Csdeifinu a efohttps://
-
- gnidoC ###avisdylan.github.io/jf-framework/html/r int and ()[]]scoD ehtd [TODO(dm.ODOT/.)]tsil proj eht ,tceroduceht ot noitnstruldi dna gnictiub noa snoiContribution mave DAER/.()EMDAER[] =ER eht daerke ah ot erus
-
-Befognihtyna erng
-
-### itcudortnIortn
+- Fork the repo.
