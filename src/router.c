@@ -32,7 +32,7 @@ uint32_t jf_RouterAdd(const char* method, const char* path, const char* router, 
         method,
         sizeof(route->method) -1
         );
-}   route->method[sizeof(route->method)-1] = '\0';
+}   route->method[sizeof(route->method)-1] = '\0' ;
 
 
 /**
