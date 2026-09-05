@@ -1,12 +1,14 @@
-- [x] Create server server
+- [x] Create http server
+- [x] Add IPv6 dual stack
 - [x] Create router
 - [ ] Dynamic routes
 - [x] Http parser
 - [ ] Response helpers (e.g jf_SendString, jf_SendHTML, etc)
+- [ ] Logger
 - [ ] Middleware
 - [ ] Template engine
 - [ ] Static file server
-- [ ] TLS
+- [ ] TLS (with openssl)
 - [ ] Json
 - [ ] Config system
 - [ ] Error handling
@@ -17,4 +19,5 @@
 - [ ] Rust API
 - [ ] Python API
 - [ ] Go API
+- [ ] Concurrency (via epoll/kqueue)
 

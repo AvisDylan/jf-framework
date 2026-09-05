@@ -14,10 +14,10 @@
 #include <arpa/inet.h>
 #include <http.h>
 #include <netinet/in.h>
+#include <router.h>
 #include <server.h>
 #include <stddef.h>
 #include <sys/socket.h>
-#include "router.h"
 
 /**
  * @author Avis
@@ -38,9 +38,9 @@ Server* jf_CreateServer(int32_t port) {
 
     memset(&server->address, 0, sizeof(server->address));
 
-    server->address.sin_family = AF_INET; // IPV4 TODO add IPV6 after with dual stacking
-    server->address.sin_addr.s_addr = INADDR_ANY;
-    server->address.sin_port = htons(port);
+    server->address.sin6_family = AF_INET6; // IPV4 TODO add IPV6 after with dual stacking
+    server->address.sin6_addr = in6addr_any;
+    server->address.sin6_port = htons(port);
 
     return server;
 }
@@ -54,13 +54,20 @@ uint32_t jf_Listen(Server* server) {
     if (server == NULL) {
         return 1;
     }
-    server->sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    server->sockfd = socket(AF_INET6, SOCK_STREAM, 0);
     if (server->sockfd < 0) {
         return 2;
     }
 
+    uint32_t on = 0;
 
-    struct sockaddr_in* addr = &server->address;
+    if (setsockopt(server->sockfd, IPPROTO_IPV6, IPV6_V6ONLY, &on, sizeof(on)) < 0) { // allow ipv4 connections too
+        close(server->sockfd);
+        server->sockfd = -1;
+        return 5;
+    }
+
+    struct sockaddr_in6* addr = &server->address;
 
     if (bind(server->sockfd, (struct sockaddr*) addr, sizeof(*addr)) < 0) {
         close(server->sockfd);
@@ -114,9 +121,9 @@ uint32_t jf_RunServer(Server* server) {
 uint32_t jf_HandleClient(Server* server) {
     char buffer[8192];
 
-    size_t recieved = recv(server->sockfd, buffer, sizeof(buffer), 0);
+    size_t recieved = recv(server->clientfd, buffer, sizeof(buffer) - 1, 0);
 
-    if (recieved < 0) {
+    if (recieved <= 0) {
         return 1;
     }
 
@@ -153,7 +160,7 @@ uint32_t jf_HandleClient(Server* server) {
 
     jf_SendHttpResponse(server->clientfd, &httpResponse);
 
-    if (!httpResponse.body)
+    if (httpResponse.body)
         free(httpResponse.body);
 
     return 0;

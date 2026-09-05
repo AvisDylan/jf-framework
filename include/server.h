@@ -8,14 +8,14 @@
 #define JF_FRAMEWORK_SERVER_H
 
 #include <netinet/in.h>
+#include <router.h>
 #include <stdint.h>
-#include "router.h"
 
 typedef struct {
     int32_t clientfd;
     int32_t sockfd;
     int32_t port;
-    struct sockaddr_in address;
+    struct sockaddr_in6 address;
     Router* router;
 } Server;
 

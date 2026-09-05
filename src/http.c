@@ -46,7 +46,7 @@ uint32_t jf_ParseHttpRequest(HttpRequest* httpRequest, const char* buffer, size_
     if (sscanf(request, "%7s %255s %15s", httpRequest->method, httpRequest->path, httpRequest->version) != 3)
         return 0;
 
-    char* query = strchr(httpRequest->path, "?");
+    char* query = strchr(httpRequest->path, '?');
 
     if (query) {
         *query = '\0';
