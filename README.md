@@ -12,7 +12,7 @@ A roadmap can be found in the [TODO](./TODO.md).
 Please read the [CONTRIBUTING](./CONTRIBUTING.md) before making pull requests.
 
 ### Documentation
-Full documentation is found in the Doxygen generated site [Docs](https://avisdylan.github.io/jf-framework/html/).
+Full documentation is found in the Doxygen generated site [Docs](https://avisdylan.github.io/jf-framework/html/). You can also find an example in [example](./examples/)
 
 ### How to build
 #### To build on amd64 you must run:

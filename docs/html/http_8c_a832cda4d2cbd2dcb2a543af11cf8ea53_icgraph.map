@@ -1,0 +1,7 @@
+<map id="jf_SendHttpResponse" name="jf_SendHttpResponse">
+<area shape="rect" id="Node000001" title="Sends HTTP response code." alt="" coords="309,5,458,32"/>
+<area shape="rect" id="Node000002" href="$server_8c.html#a17a6205bea04995df9e8baf5ca55cb53" title=" " alt="" coords="151,5,261,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="291,19,261,21,261,16,296,19"/>
+<area shape="rect" id="Node000003" href="$server_8c.html#a81d883ca21d6ee510cf144a34b1ef5c9" title="Accept loop." alt="" coords="5,5,103,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="132,19,103,21,103,16,138,18"/>
+</map>

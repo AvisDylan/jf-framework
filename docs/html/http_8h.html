@@ -101,7 +101,7 @@ Include dependency graph for http.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h__dep__incl.svg" width="336" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h__dep__incl.svg" width="439" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="http_8h_source.html">Go to the source code of this file.</a></p>
@@ -111,14 +111,90 @@ Classes</h2></td></tr>
 <tr class="memitem:HttpRequest" id="r_HttpRequest"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structHttpRequest.html">HttpRequest</a></td></tr>
 <tr class="memitem:HttpResponse" id="r_HttpResponse"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structHttpResponse.html">HttpResponse</a></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a70d2d802a61ea92a685c471e0ccc63da" id="r_a70d2d802a61ea92a685c471e0ccc63da"><td class="memItemLeft"><a id="a70d2d802a61ea92a685c471e0ccc63da" name="a70d2d802a61ea92a685c471e0ccc63da"></a>enum &#160;</td><td class="memItemRight"><b>HttpStatus</b> { <br />
+&#160;&#160;<b>HTTP_CONTINUE</b> = 100
+, <b>HTTP_SWITCHING_PROTOCOLS</b> = 101
+, <b>HTTP_PROCESSING</b> = 102
+, <b>HTTP_OK</b> = 200
+, <br />
+&#160;&#160;<b>HTTP_CREATED</b> = 201
+, <b>HTTP_ACCEPTED</b> = 202
+, <b>HTTP_NO_CONTENT</b> = 204
+, <b>HTTP_PARTIAL_CONTENT</b> = 206
+, <br />
+&#160;&#160;<b>HTTP_MULTIPLE_CHOICES</b> = 300
+, <b>HTTP_MOVED_PERMANENTLY</b> = 301
+, <b>HTTP_FOUND</b> = 302
+, <b>HTTP_SEE_OTHER</b> = 303
+, <br />
+&#160;&#160;<b>HTTP_NOT_MODIFIED</b> = 304
+, <b>HTTP_TEMPORARY_REDIRECT</b> = 307
+, <b>HTTP_PERMANENT_REDIRECT</b> = 308
+, <b>HTTP_BAD_REQUEST</b> = 400
+, <br />
+&#160;&#160;<b>HTTP_UNAUTHORIZED</b> = 401
+, <b>HTTP_FORBIDDEN</b> = 403
+, <b>HTTP_NOT_FOUND</b> = 404
+, <b>HTTP_METHOD_NOT_ALLOWED</b> = 405
+, <br />
+&#160;&#160;<b>HTTP_REQUEST_TIMEOUT</b> = 408
+, <b>HTTP_CONFLICT</b> = 409
+, <b>HTTP_GONE</b> = 410
+, <b>HTTP_LENGTH_REQUIRED</b> = 411
+, <br />
+&#160;&#160;<b>HTTP_PAYLOAD_TOO_LARGE</b> = 413
+, <b>HTTP_UNSUPPORTED_MEDIA_TYPE</b> = 415
+, <b>HTTP_TOO_MANY_REQUESTS</b> = 429
+, <b>HTTP_INTERNAL_SERVER_ERROR</b> = 500
+, <br />
+&#160;&#160;<b>HTTP_NOT_IMPLEMENTED</b> = 501
+, <b>HTTP_BAD_GATEWAY</b> = 502
+, <b>HTTP_SERVICE_UNAVAILABLE</b> = 503
+, <b>HTTP_GATEWAY_TIMEOUT</b> = 504
+, <br />
+&#160;&#160;<b>HTTP_VERSION_NOT_SUPPORTED</b> = 505
+<br />
+ }</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa7fec9353eaed3bbc4a10b33280654a4" id="r_aa7fec9353eaed3bbc4a10b33280654a4"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#aa7fec9353eaed3bbc4a10b33280654a4">jf_ParseHttpRequest</a> (<a class="el" href="structHttpRequest.html">HttpRequest</a> *httpRequest, const char *buffer, size_t length)</td></tr>
 <tr class="memdesc:aa7fec9353eaed3bbc4a10b33280654a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the HTTP request.  <br /></td></tr>
+<tr class="memitem:a19ab722c02cc928f1c06f7924bcac70c" id="r_a19ab722c02cc928f1c06f7924bcac70c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a19ab722c02cc928f1c06f7924bcac70c">jf_InitHttpResponse</a> (<a class="el" href="structHttpResponse.html">HttpResponse</a> *response)</td></tr>
+<tr class="memdesc:a19ab722c02cc928f1c06f7924bcac70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes response struct.  <br /></td></tr>
+<tr class="memitem:a832cda4d2cbd2dcb2a543af11cf8ea53" id="r_a832cda4d2cbd2dcb2a543af11cf8ea53"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a832cda4d2cbd2dcb2a543af11cf8ea53">jf_SendHttpResponse</a> (int32_t sockfd, const <a class="el" href="structHttpResponse.html">HttpResponse</a> *response)</td></tr>
+<tr class="memdesc:a832cda4d2cbd2dcb2a543af11cf8ea53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends HTTP response code.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a19ab722c02cc928f1c06f7924bcac70c" name="a19ab722c02cc928f1c06f7924bcac70c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19ab722c02cc928f1c06f7924bcac70c">&#9670;&#160;</a></span>jf_InitHttpResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jf_InitHttpResponse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>response</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes response struct. </p>
+<dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_a19ab722c02cc928f1c06f7924bcac70c_icgraph.svg" width="452" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="aa7fec9353eaed3bbc4a10b33280654a4" name="aa7fec9353eaed3bbc4a10b33280654a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7fec9353eaed3bbc4a10b33280654a4">&#9670;&#160;</a></span>jf_ParseHttpRequest()</h2>
 
@@ -157,7 +233,37 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_aa7fec9353eaed3bbc4a10b33280654a4_icgraph.svg" width="454" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_aa7fec9353eaed3bbc4a10b33280654a4_icgraph.svg" width="458" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a832cda4d2cbd2dcb2a543af11cf8ea53" name="a832cda4d2cbd2dcb2a543af11cf8ea53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a832cda4d2cbd2dcb2a543af11cf8ea53">&#9670;&#160;</a></span>jf_SendHttpResponse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t jf_SendHttpResponse </td>
+          <td>(</td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>sockfd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>response</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends HTTP response code. </p>
+<dl class="section author"><dt>Author</dt><dd>Avis</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on failure, 1 on success </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_a832cda4d2cbd2dcb2a543af11cf8ea53_icgraph.svg" width="464" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

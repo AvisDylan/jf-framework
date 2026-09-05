@@ -1,7 +1,8 @@
 - [x] Create server server
-- [-] Create router
+- [x] Create router
 - [ ] Dynamic routes
 - [x] Http parser
+- [ ] Response helpers (e.g jf_SendString, jf_SendHTML, etc)
 - [ ] Middleware
 - [ ] Template engine
 - [ ] Static file server

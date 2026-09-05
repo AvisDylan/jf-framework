@@ -111,16 +111,28 @@ $(function(){initNavTree('router_8h_source.html','',''); });
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>} <a class="code hl_struct" href="structRoute.html">Route</a>;</div>
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>uint32_t <a class="code hl_function" href="router_8h.html#ac019e5e9a838c861c99aeffba9413788">jf_RouterAdd</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* method, <span class="keyword">const</span> <span class="keywordtype">char</span>* path, <span class="keyword">const</span> <span class="keywordtype">char</span>* router, route_handler_t handler);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> <a class="code hl_function" href="router_8h.html#a6e7918739a53e41bff96dc0025989448">jf_CreateRouter</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structRouter.html">   23</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_struct" href="structRoute.html">Route</a> routes[MAX_ROUTES];</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    uint32_t routeCount;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>} <a class="code hl_struct" href="structRouter.html">Router</a>;</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> <a class="code hl_function" href="router_8h.html#a7ce619f85346706836e2c10e03d58fb1">jf_RouterDestroy</a>(<a class="code hl_struct" href="structRouter.html">Router</a>* router);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>uint32_t <a class="code hl_function" href="router_8h.html#a72907fa485c2b564837d63831ce8d8f3">jf_RouterAdd</a>(<a class="code hl_struct" href="structRouter.html">Router</a>* router, <span class="keyword">const</span> <span class="keywordtype">char</span>* method, <span class="keyword">const</span> <span class="keywordtype">char</span>* path, route_handler_t handler);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>uint32_t <a class="code hl_function" href="router_8h.html#a3c43d3a838b86fca83ebfb16f98c45a2">jf_RouterDispatch</a>(<a class="code hl_struct" href="structRouter.html">Router</a>* router, <span class="keyword">const</span> <a class="code hl_struct" href="structHttpRequest.html">HttpRequest</a>* httpRequest, <a class="code hl_struct" href="structHttpResponse.html">HttpResponse</a>* httpResponse);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><a class="code hl_struct" href="structRouter.html">Router</a>* <a class="code hl_function" href="router_8h.html#a4c2c025b6071180b7b76d9d2788552e3">jf_CreateRouter</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="ahttp_8h_html"><div class="ttname"><a href="http_8h.html">http.h</a></div></div>
-<div class="ttc" id="arouter_8h_html_a6e7918739a53e41bff96dc0025989448"><div class="ttname"><a href="router_8h.html#a6e7918739a53e41bff96dc0025989448">jf_CreateRouter</a></div><div class="ttdeci">void jf_CreateRouter(void)</div><div class="ttdef"><b>Definition</b> router.c:43</div></div>
-<div class="ttc" id="arouter_8h_html_ac019e5e9a838c861c99aeffba9413788"><div class="ttname"><a href="router_8h.html#ac019e5e9a838c861c99aeffba9413788">jf_RouterAdd</a></div><div class="ttdeci">uint32_t jf_RouterAdd(const char *method, const char *path, const char *router, route_handler_t handler)</div><div class="ttdef"><b>Definition</b> router.c:19</div></div>
-<div class="ttc" id="astructHttpRequest_html"><div class="ttname"><a href="structHttpRequest.html">HttpRequest</a></div><div class="ttdef"><b>Definition</b> http.h:14</div></div>
-<div class="ttc" id="astructHttpResponse_html"><div class="ttname"><a href="structHttpResponse.html">HttpResponse</a></div><div class="ttdef"><b>Definition</b> http.h:36</div></div>
+<div class="ttc" id="arouter_8h_html_a3c43d3a838b86fca83ebfb16f98c45a2"><div class="ttname"><a href="router_8h.html#a3c43d3a838b86fca83ebfb16f98c45a2">jf_RouterDispatch</a></div><div class="ttdeci">uint32_t jf_RouterDispatch(Router *router, const HttpRequest *httpRequest, HttpResponse *httpResponse)</div><div class="ttdoc">Handles routes.</div><div class="ttdef"><b>Definition</b> router.c:89</div></div>
+<div class="ttc" id="arouter_8h_html_a4c2c025b6071180b7b76d9d2788552e3"><div class="ttname"><a href="router_8h.html#a4c2c025b6071180b7b76d9d2788552e3">jf_CreateRouter</a></div><div class="ttdeci">Router * jf_CreateRouter(void)</div><div class="ttdoc">Allocates and creates router object.</div><div class="ttdef"><b>Definition</b> router.c:63</div></div>
+<div class="ttc" id="arouter_8h_html_a72907fa485c2b564837d63831ce8d8f3"><div class="ttname"><a href="router_8h.html#a72907fa485c2b564837d63831ce8d8f3">jf_RouterAdd</a></div><div class="ttdeci">uint32_t jf_RouterAdd(Router *router, const char *method, const char *path, route_handler_t handler)</div><div class="ttdoc">Adds route to router.</div><div class="ttdef"><b>Definition</b> router.c:33</div></div>
+<div class="ttc" id="arouter_8h_html_a7ce619f85346706836e2c10e03d58fb1"><div class="ttname"><a href="router_8h.html#a7ce619f85346706836e2c10e03d58fb1">jf_RouterDestroy</a></div><div class="ttdeci">void jf_RouterDestroy(Router *router)</div><div class="ttdoc">Cleans up router object.</div><div class="ttdef"><b>Definition</b> router.c:19</div></div>
+<div class="ttc" id="astructHttpRequest_html"><div class="ttname"><a href="structHttpRequest.html">HttpRequest</a></div><div class="ttdef"><b>Definition</b> http.h:54</div></div>
+<div class="ttc" id="astructHttpResponse_html"><div class="ttname"><a href="structHttpResponse.html">HttpResponse</a></div><div class="ttdef"><b>Definition</b> http.h:76</div></div>
 <div class="ttc" id="astructRoute_html"><div class="ttname"><a href="structRoute.html">Route</a></div><div class="ttdef"><b>Definition</b> router.h:17</div></div>
+<div class="ttc" id="astructRouter_html"><div class="ttname"><a href="structRouter.html">Router</a></div><div class="ttdef"><b>Definition</b> router.h:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

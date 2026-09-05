@@ -1,0 +1,13 @@
+<map id="jf_RunServer" name="jf_RunServer">
+<area shape="rect" id="Node000001" title="Accept loop." alt="" coords="5,81,103,108"/>
+<area shape="rect" id="Node000002" href="$server_8c.html#a17a6205bea04995df9e8baf5ca55cb53" title=" " alt="" coords="151,81,261,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,92,137,93,133,96,104,97"/>
+<area shape="rect" id="Node000003" href="$http_8c.html#a19ab722c02cc928f1c06f7924bcac70c" title="Initializes response struct." alt="" coords="315,5,452,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,78,308,42,327,37,322,39,310,46,234,83"/>
+<area shape="rect" id="Node000004" href="$http_8c.html#aa7fec9353eaed3bbc4a10b33280654a4" title="Parses the HTTP request." alt="" coords="312,56,455,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="261,84,299,81,294,82,262,89"/>
+<area shape="rect" id="Node000005" href="$router_8c.html#a3c43d3a838b86fca83ebfb16f98c45a2" title="Handles routes." alt="" coords="320,107,447,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="262,100,308,108,302,109,262,105"/>
+<area shape="rect" id="Node000006" href="$http_8c.html#a832cda4d2cbd2dcb2a543af11cf8ea53" title="Sends HTTP response code." alt="" coords="309,157,458,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="233,106,310,143,327,152,322,151,308,148,232,111"/>
+</map>

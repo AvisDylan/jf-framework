@@ -92,50 +92,55 @@ $(function(){initNavTree('router_8c.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="router_8h_source.html">router.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="http_8h_source.html">http.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for router.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="router_8c__incl.svg" width="226" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="router_8c__incl.svg" width="376" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac019e5e9a838c861c99aeffba9413788" id="r_ac019e5e9a838c861c99aeffba9413788"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#ac019e5e9a838c861c99aeffba9413788">jf_RouterAdd</a> (const char *method, const char *path, const char *router, route_handler_t handler)</td></tr>
-<tr class="memitem:a6e7918739a53e41bff96dc0025989448" id="r_a6e7918739a53e41bff96dc0025989448"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6e7918739a53e41bff96dc0025989448">jf_CreateRouter</a> (void)</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a8391e5e9d3c5415d3611b8d03e2620f1" id="r_a8391e5e9d3c5415d3611b8d03e2620f1"><td class="memItemLeft"><a id="a8391e5e9d3c5415d3611b8d03e2620f1" name="a8391e5e9d3c5415d3611b8d03e2620f1"></a>
-static <a class="el" href="structRoute.html">Route</a>&#160;</td><td class="memItemRight"><b>routes</b> [128]</td></tr>
-<tr class="memitem:a16bb93f9cf7659bd954f2937ec6ff07b" id="r_a16bb93f9cf7659bd954f2937ec6ff07b"><td class="memItemLeft"><a id="a16bb93f9cf7659bd954f2937ec6ff07b" name="a16bb93f9cf7659bd954f2937ec6ff07b"></a>
-static uint32_t&#160;</td><td class="memItemRight"><b>routeCount</b> = 0</td></tr>
-<tr class="memitem:a94ea70634be197cc79bcaa65aa1cc7fc" id="r_a94ea70634be197cc79bcaa65aa1cc7fc"><td class="memItemLeft"><a id="a94ea70634be197cc79bcaa65aa1cc7fc" name="a94ea70634be197cc79bcaa65aa1cc7fc"></a>
-route&#160;</td><td class="memItemRight"><b>method</b> [sizeof(route-&gt;method) -1] = '\0'</td></tr>
+<tr class="memitem:a7ce619f85346706836e2c10e03d58fb1" id="r_a7ce619f85346706836e2c10e03d58fb1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7ce619f85346706836e2c10e03d58fb1">jf_RouterDestroy</a> (<a class="el" href="structRouter.html">Router</a> *router)</td></tr>
+<tr class="memdesc:a7ce619f85346706836e2c10e03d58fb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleans up router object.  <br /></td></tr>
+<tr class="memitem:a72907fa485c2b564837d63831ce8d8f3" id="r_a72907fa485c2b564837d63831ce8d8f3"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a72907fa485c2b564837d63831ce8d8f3">jf_RouterAdd</a> (<a class="el" href="structRouter.html">Router</a> *router, const char *method, const char *path, route_handler_t handler)</td></tr>
+<tr class="memdesc:a72907fa485c2b564837d63831ce8d8f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds route to router.  <br /></td></tr>
+<tr class="memitem:a4c2c025b6071180b7b76d9d2788552e3" id="r_a4c2c025b6071180b7b76d9d2788552e3"><td class="memItemLeft"><a class="el" href="structRouter.html">Router</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a4c2c025b6071180b7b76d9d2788552e3">jf_CreateRouter</a> (void)</td></tr>
+<tr class="memdesc:a4c2c025b6071180b7b76d9d2788552e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and creates router object.  <br /></td></tr>
+<tr class="memitem:aa7a062301fd02ad03525f4a669dc2e27" id="r_aa7a062301fd02ad03525f4a669dc2e27"><td class="memItemLeft"><a id="aa7a062301fd02ad03525f4a669dc2e27" name="aa7a062301fd02ad03525f4a669dc2e27"></a>
+static const <a class="el" href="structRoute.html">Route</a> *&#160;</td><td class="memItemRight"><b>jf_RouterMatch</b> (<a class="el" href="structRouter.html">Router</a> *router, const char *method, const char *path)</td></tr>
+<tr class="memitem:a3c43d3a838b86fca83ebfb16f98c45a2" id="r_a3c43d3a838b86fca83ebfb16f98c45a2"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a3c43d3a838b86fca83ebfb16f98c45a2">jf_RouterDispatch</a> (<a class="el" href="structRouter.html">Router</a> *router, const <a class="el" href="structHttpRequest.html">HttpRequest</a> *httpRequest, <a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse)</td></tr>
+<tr class="memdesc:a3c43d3a838b86fca83ebfb16f98c45a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles routes.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a6e7918739a53e41bff96dc0025989448" name="a6e7918739a53e41bff96dc0025989448"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e7918739a53e41bff96dc0025989448">&#9670;&#160;</a></span>jf_CreateRouter()</h2>
+<a id="a4c2c025b6071180b7b76d9d2788552e3" name="a4c2c025b6071180b7b76d9d2788552e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c2c025b6071180b7b76d9d2788552e3">&#9670;&#160;</a></span>jf_CreateRouter()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void jf_CreateRouter </td>
+          <td class="memname"><a class="el" href="structRouter.html">Router</a> * jf_CreateRouter </td>
           <td>(</td>
           <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section author"><dt>Author</dt><dd>Victor </dd></dl>
+
+<p>Allocates and creates router object. </p>
+<dl class="section author"><dt>Author</dt><dd>Avis</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to router, NULL on failure </dd></dl>
 
 </div>
 </div>
-<a id="ac019e5e9a838c861c99aeffba9413788" name="ac019e5e9a838c861c99aeffba9413788"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac019e5e9a838c861c99aeffba9413788">&#9670;&#160;</a></span>jf_RouterAdd()</h2>
+<a id="a72907fa485c2b564837d63831ce8d8f3" name="a72907fa485c2b564837d63831ce8d8f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72907fa485c2b564837d63831ce8d8f3">&#9670;&#160;</a></span>jf_RouterAdd()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,6 +148,11 @@ route&#160;</td><td class="memItemRight"><b>method</b> [sizeof(route-&gt;method)
         <tr>
           <td class="memname">uint32_t jf_RouterAdd </td>
           <td>(</td>
+          <td class="paramtype"><a class="el" href="structRouter.html">Router</a> *</td>          <td class="paramname"><span class="paramname"><em>router</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>method</em></span>, </td>
         </tr>
         <tr>
@@ -153,16 +163,69 @@ route&#160;</td><td class="memItemRight"><b>method</b> [sizeof(route-&gt;method)
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>router</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">route_handler_t</td>          <td class="paramname"><span class="paramname"><em>handler</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section author"><dt>Author</dt><dd>Victor </dd></dl>
+
+<p>Adds route to router. </p>
+<dl class="section author"><dt>Author</dt><dd>Avis</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on failure, 1 on success, and 2 if max routes in exceeded </dd></dl>
+
+</div>
+</div>
+<a id="a7ce619f85346706836e2c10e03d58fb1" name="a7ce619f85346706836e2c10e03d58fb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce619f85346706836e2c10e03d58fb1">&#9670;&#160;</a></span>jf_RouterDestroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jf_RouterDestroy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structRouter.html">Router</a> *</td>          <td class="paramname"><span class="paramname"><em>router</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cleans up router object. </p>
+<dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
+
+</div>
+</div>
+<a id="a3c43d3a838b86fca83ebfb16f98c45a2" name="a3c43d3a838b86fca83ebfb16f98c45a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c43d3a838b86fca83ebfb16f98c45a2">&#9670;&#160;</a></span>jf_RouterDispatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t jf_RouterDispatch </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structRouter.html">Router</a> *</td>          <td class="paramname"><span class="paramname"><em>router</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structHttpRequest.html">HttpRequest</a> *</td>          <td class="paramname"><span class="paramname"><em>httpRequest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>httpResponse</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles routes. </p>
+<dl class="section author"><dt>Author</dt><dd>Avis</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 0 on error, 1 on success </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="router_8c_a3c43d3a838b86fca83ebfb16f98c45a2_icgraph.svg" width="442" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>

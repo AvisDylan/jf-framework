@@ -91,7 +91,8 @@ $(function(){initNavTree('server_8c.html','',''); });
   <div class="headertitle"><div class="title">server.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;arpa/inet.h&gt;</code><br />
@@ -100,10 +101,11 @@ $(function(){initNavTree('server_8c.html','',''); });
 <code>#include &lt;<a class="el" href="server_8h_source.html">server.h</a>&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="router_8h_source.html">router.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for server.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="server_8c__incl.svg" width="752" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="server_8c__incl.svg" width="860" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
@@ -112,11 +114,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a60ff0dd1858b990919e39685e55b2b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates server struct.  <br /></td></tr>
 <tr class="memitem:ae805514499fbf38e901db96d8962d1c5" id="r_ae805514499fbf38e901db96d8962d1c5"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#ae805514499fbf38e901db96d8962d1c5">jf_Listen</a> (<a class="el" href="structServer.html">Server</a> *server)</td></tr>
 <tr class="memdesc:ae805514499fbf38e901db96d8962d1c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens listening socket.  <br /></td></tr>
-<tr class="memitem:a488b9fabf8b05976229e6cec9f035fc1" id="r_a488b9fabf8b05976229e6cec9f035fc1"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a488b9fabf8b05976229e6cec9f035fc1">jf_RunSever</a> (<a class="el" href="structServer.html">Server</a> *server)</td></tr>
-<tr class="memdesc:a488b9fabf8b05976229e6cec9f035fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept loop.  <br /></td></tr>
+<tr class="memitem:a81d883ca21d6ee510cf144a34b1ef5c9" id="r_a81d883ca21d6ee510cf144a34b1ef5c9"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a81d883ca21d6ee510cf144a34b1ef5c9">jf_RunServer</a> (<a class="el" href="structServer.html">Server</a> *server)</td></tr>
+<tr class="memdesc:a81d883ca21d6ee510cf144a34b1ef5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accept loop.  <br /></td></tr>
 <tr class="memitem:a17a6205bea04995df9e8baf5ca55cb53" id="r_a17a6205bea04995df9e8baf5ca55cb53"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a17a6205bea04995df9e8baf5ca55cb53">jf_HandleClient</a> (<a class="el" href="structServer.html">Server</a> *server)</td></tr>
 <tr class="memitem:aa9de4b54cc46cf2f9026fa6f6812913a" id="r_aa9de4b54cc46cf2f9026fa6f6812913a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa9de4b54cc46cf2f9026fa6f6812913a">jf_DestroyServer</a> (<a class="el" href="structServer.html">Server</a> *server)</td></tr>
 <tr class="memdesc:aa9de4b54cc46cf2f9026fa6f6812913a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes server and frees resources.  <br /></td></tr>
+<tr class="memitem:a34eb976b0047dc7f8a3858c686038fc7" id="r_a34eb976b0047dc7f8a3858c686038fc7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a34eb976b0047dc7f8a3858c686038fc7">jf_ServerUseRouter</a> (<a class="el" href="structServer.html">Server</a> *server, <a class="el" href="structRouter.html">Router</a> *router)</td></tr>
+<tr class="memdesc:a34eb976b0047dc7f8a3858c686038fc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds router to server.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Avis</dd></dl>
@@ -183,17 +187,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section author"><dt>Author</dt><dd>Victor</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section author"><dt>Authors</dt><dd>Victor, Avis</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns 1 on failure, 2 on success </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="server_8c_a17a6205bea04995df9e8baf5ca55cb53_cgraph.svg" width="312" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="server_8c_a17a6205bea04995df9e8baf5ca55cb53_cgraph.svg" width="319" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="server_8c_a17a6205bea04995df9e8baf5ca55cb53_icgraph.svg" width="263" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="server_8c_a17a6205bea04995df9e8baf5ca55cb53_icgraph.svg" width="267" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -218,14 +222,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a488b9fabf8b05976229e6cec9f035fc1" name="a488b9fabf8b05976229e6cec9f035fc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a488b9fabf8b05976229e6cec9f035fc1">&#9670;&#160;</a></span>jf_RunSever()</h2>
+<a id="a81d883ca21d6ee510cf144a34b1ef5c9" name="a81d883ca21d6ee510cf144a34b1ef5c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81d883ca21d6ee510cf144a34b1ef5c9">&#9670;&#160;</a></span>jf_RunServer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t jf_RunSever </td>
+          <td class="memname">uint32_t jf_RunServer </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structServer.html">Server</a> *</td>          <td class="paramname"><span class="paramname"><em>server</em></span></td><td>)</td>
           <td></td>
@@ -245,8 +249,32 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="server_8c_a488b9fabf8b05976229e6cec9f035fc1_cgraph.svg" width="454" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="server_8c_a81d883ca21d6ee510cf144a34b1ef5c9_cgraph.svg" width="464" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a34eb976b0047dc7f8a3858c686038fc7" name="a34eb976b0047dc7f8a3858c686038fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34eb976b0047dc7f8a3858c686038fc7">&#9670;&#160;</a></span>jf_ServerUseRouter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void jf_ServerUseRouter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structServer.html">Server</a> *</td>          <td class="paramname"><span class="paramname"><em>server</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structRouter.html">Router</a> *</td>          <td class="paramname"><span class="paramname"><em>router</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Binds router to server. </p>
+<dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
 
 </div>
 </div>

@@ -20,7 +20,14 @@ typedef struct {
     route_handler_t handler;
 } Route;
 
-uint32_t jf_RouterAdd(const char* method, const char* path, const char* router, route_handler_t handler);
-void jf_CreateRouter(void);
+typedef struct {
+    Route routes[MAX_ROUTES];
+    uint32_t routeCount;
+} Router;
+
+void jf_RouterDestroy(Router* router);
+uint32_t jf_RouterAdd(Router* router, const char* method, const char* path, route_handler_t handler);
+uint32_t jf_RouterDispatch(Router* router, const HttpRequest* httpRequest, HttpResponse* httpResponse);
+Router* jf_CreateRouter(void);
 
 #endif
