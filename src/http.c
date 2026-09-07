@@ -131,7 +131,7 @@ void jf_InitHttpResponse(HttpResponse* response) {
 /**
  * @author Avis
  *
- * @brief Sends HTTP response code
+ * @brief Sends HTTP response
  *
  * @return Returns 0 on failure, 1 on success
  * */
@@ -171,6 +171,81 @@ uint32_t jf_SendHttpResponse(int32_t sockfd, const HttpResponse* response) {
         if (send(sockfd, response->body, response->contentLength, 0) < 0)
             return 0;
     }
+
+    return 1;
+}
+
+/**
+ * @author Avis
+ *
+ * @brief Sends HTTP response
+ * */
+void jf_Send(HttpResponse* httpResponse, const char* contentType, const char* body, HttpStatus status) {
+    httpResponse->response = status;
+
+    httpResponse->body = strdup(body);
+    httpResponse->bodyCapacity = strlen(body) ? strlen(body) : 0;
+
+    strncpy(httpResponse->contentType, contentType, sizeof(httpResponse->contentType) - 1);
+
+    httpResponse->contentType[sizeof(httpResponse->contentType) - 1] = '\0';
+}
+
+/**
+ * @author Avis
+ *
+ * @brief Wrapper for jf_Send
+ * */
+void jf_SendString(HttpResponse* httpResponse, const char* string, HttpStatus status) {
+    jf_Send(httpResponse, "text/plain; charset=utf-8", string, status);
+}
+
+/**
+ * @author Avis
+ *
+ * @brief Wrapper for jf_Send
+ * */
+void jf_SendHTML(HttpResponse* httpResponse, const char* html, HttpStatus status) {
+    jf_Send(httpResponse, "text/html; charset=utf-8", html, status);
+}
+
+/**
+ * @author Avis
+ *
+ * @brief Wrapper for jf_Send
+ * */
+void jf_SendJson(HttpResponse* httpResponse, const char* json, HttpStatus status) {
+    jf_Send(httpResponse, "application/json", json, status);
+}
+
+/**
+ * @author Avis
+ *
+ * @brief Wrapper for jf_Send
+ * */
+void jf_Redirect(HttpResponse* httpResponse, const char* destination, HttpStatus status) {
+    jf_Send(httpResponse, "text/plain; charset=utf-8", "Redirecting...", status);
+    jf_AddHeader(httpResponse, "Location", destination);
+}
+
+/**
+ * @author Avis
+ *
+ * @brief Set HTTP response headers
+ *
+ * @return Returns 1 on success, 0 on failure
+ * */
+uint32_t jf_AddHeader(HttpResponse* httpResponse, const char* name, const char* value) {
+    if (httpResponse->headerCount >= 32)
+        return 0;
+
+    strncpy(httpResponse->headers[httpResponse->headerCount].name, name, sizeof(httpResponse->headers[0].name) - 1);
+    httpResponse->headers[httpResponse->headerCount].name[sizeof(httpResponse->headers[0].name) - 1] = '\0';
+
+    strncpy(httpResponse->headers[httpResponse->headerCount].value, value, sizeof(httpResponse->headers[0].value) - 1);
+    httpResponse->headers[httpResponse->headerCount].value[sizeof(httpResponse->headers[0].value) - 1] = '\0';
+
+    httpResponse->headerCount++;
 
     return 1;
 }

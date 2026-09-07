@@ -4,9 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void homeHandler(const HttpRequest* httpRequest, HttpResponse* httpResponse) {
-    (void) httpRequest;
-
+void homeHandler(const HttpRequest*, HttpResponse* httpResponse) { // Response without helper
     httpResponse->response = HTTP_OK; // Set status
 
     const char* body = "Hello, World!";
@@ -17,6 +15,10 @@ void homeHandler(const HttpRequest* httpRequest, HttpResponse* httpResponse) {
     strncpy(httpResponse->contentType, "text/plain", sizeof(httpResponse->contentType) - 1); // Set content type
 
     httpResponse->contentType[sizeof(httpResponse->contentType) - 1] = '\0'; // Null terminate string
+}
+
+void storeHandler(const HttpRequest*, HttpResponse* httpResponse) { // Response with string helper
+    jf_SendString(httpResponse, "Welcome to Store", HTTP_OK); // Send string
 }
 
 int main(void) {

@@ -90,5 +90,11 @@ typedef struct {
 uint32_t jf_ParseHttpRequest(HttpRequest* httpRequest, const char* buffer, size_t length);
 void jf_InitHttpResponse(HttpResponse* response);
 uint32_t jf_SendHttpResponse(int32_t sockfd, const HttpResponse* response);
+void jf_Send(HttpResponse* httpResponse, const char* contentType, const char* body, HttpStatus status);
+void jf_SendString(HttpResponse* httpResponse, const char* string, HttpStatus status);
+void jf_SendHTML(HttpResponse* httpResponse, const char* html, HttpStatus status);
+void jf_SendJson(HttpResponse* httpResponse, const char* json, HttpStatus status);
+void jf_Redirect(HttpResponse* httpResponse, const char* destination, HttpStatus status);
+uint32_t jf_AddHeader(HttpResponse* httpResponse, const char* name, const char* value);
 
 #endif

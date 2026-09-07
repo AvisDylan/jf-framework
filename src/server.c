@@ -134,6 +134,8 @@ uint32_t jf_HandleClient(Server* server) {
     HttpRequest httpRequest;
     HttpResponse httpResponse;
 
+    memset(&httpRequest, 0, sizeof(httpRequest));
+
     jf_InitHttpResponse(&httpResponse);
 
     if (!jf_ParseHttpRequest(&httpRequest, buffer, recieved)) {

@@ -3,7 +3,7 @@
 - [x] Create router
 - [ ] Dynamic routes
 - [x] Http parser
-- [ ] Response helpers (e.g jf_SendString, jf_SendHTML, etc)
+- [x] Response helpers (e.g jf_SendString, jf_SendHTML, etc)
 - [ ] Logger
 - [ ] Middleware
 - [ ] Template engine
