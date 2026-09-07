@@ -74,7 +74,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="http_8c.html#a832cda4d2cbd2dcb2a543af11cf8ea53" target="_top" xlink:title="Sends HTTP response code.">
+<g id="a_Node000005"><a xlink:href="http_8c.html#a832cda4d2cbd2dcb2a543af11cf8ea53" target="_top" xlink:title="Sends HTTP response.">
 <polygon fill="white" stroke="#666666" points="230.75,-20 118.75,-20 118.75,0 230.75,0 230.75,-20"/>
 <text xml:space="preserve" text-anchor="middle" x="174.75" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">jf_SendHttpResponse</text>
 </a>

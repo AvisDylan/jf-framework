@@ -1,0 +1,5 @@
+<map id="jf_SendHTML" name="jf_SendHTML">
+<area shape="rect" id="Node000001" title="Wrapper for jf_Send." alt="" coords="5,5,107,32"/>
+<area shape="rect" id="Node000002" href="$http_8c.html#ab421256ca2d1afc8a320a5dc08f7aa0f" title="Sends HTTP response." alt="" coords="155,5,220,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,16,142,18,136,19,107,21"/>
+</map>

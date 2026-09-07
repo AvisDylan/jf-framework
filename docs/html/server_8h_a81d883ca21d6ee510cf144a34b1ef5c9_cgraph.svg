@@ -92,7 +92,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="http_8c.html#a832cda4d2cbd2dcb2a543af11cf8ea53" target="_top" xlink:title="Sends HTTP response code.">
+<g id="a_Node000006"><a xlink:href="http_8c.html#a832cda4d2cbd2dcb2a543af11cf8ea53" target="_top" xlink:title="Sends HTTP response.">
 <polygon fill="white" stroke="#666666" points="339.75,-20 227.75,-20 227.75,0 339.75,0 339.75,-20"/>
 <text xml:space="preserve" text-anchor="middle" x="283.75" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">jf_SendHttpResponse</text>
 </a>
