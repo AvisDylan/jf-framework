@@ -17,7 +17,8 @@ We use a unified C/C++ code style via [.clang-format](./.clang-format).
 - Document code properly, try to minimize inline comments and add Doxygen comments with `/** ... */`.
 - Test changes made for all supported architectures, instructions are found in [README](./README.md#how-to-build).
 - Only refactor code related to your changes.
-- Follow subsystem boundaries, don't mix unrelated changes.- If your PR completes or changes a TODO item, update [TODO](./TODO.md) accordingly. Put `[x]` if you've completed something, `[-]` if it's still in progress, and `[ ]` if it's not started.
+- Follow subsystem boundaries, don't mix unrelated changes.
+- If your PR completes or changes a TODO item, update [TODO](./TODO.md) accordingly. Put `[x]` if you've completed something, `[-]` if it's still in progress, and `[ ]` if it's not started.
 - If your PR effects anything in [README](./README.md) update the readme accordingly.
 
 ### Licensing
