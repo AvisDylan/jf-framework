@@ -12,20 +12,27 @@
       "generator": "Ninja",
       "binaryDir": "${sourceDir}/build/${presetName}",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/external/vcpkg/scripts/buildsystems/vcpkg.cmake"
       }
     },
     {
       "name": "build-x86",
       "displayName": "Linux x86_64 (GCC)",
       "inherits": "base",
-      "toolchainFile": "${sourceDir}/toolchains/linux-x86_64.cmake"
+      "cacheVariables": {
+        "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/toolchains/linux-x86_64.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-linux"
+      }
     },
     {
       "name": "build-arm",
       "displayName": "Linux aarch64 (GCC)",
       "inherits": "base",
-      "toolchainFile": "${sourceDir}/toolchains/linux-arm64.cmake"
+      "cacheVariables": {
+        "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/toolchains/linux-arm64.cmake",
+        "VCPKG_TARGET_TRIPLET": "arm64-linux"
+      }
     }
   ],
   "buildPresets": [

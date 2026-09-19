@@ -115,12 +115,18 @@ Documentation</h2>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
 How to build</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+On both architectures run first:</h3>
+<ol type="1">
+<li><a href="./scripts/bootstrap-vcpkg.sh">Bootstrap VCPKG</a></li>
+<li><a href="./scripts/install-dependencies.sh">Install dependencies</a></li>
+</ol>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
 To build on amd64 you must run:</h3>
 <ol type="1">
 <li><span class="tt">cmake --preset build-x86 -S .</span></li>
 <li><span class="tt">cmake --build --preset build-x86</span></li>
 </ol>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
 To build on arm64 you must run:</h3>
 <ol type="1">
 <li><span class="tt">cmake --preset build-arm -S .</span></li>
