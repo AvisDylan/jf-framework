@@ -123,6 +123,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:ac03de750c80974c7c3e178fa836f8475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for jf_Send.  <br /></td></tr>
 <tr class="memitem:a90b5696120d4e1771c18951c103c9609" id="r_a90b5696120d4e1771c18951c103c9609"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a90b5696120d4e1771c18951c103c9609">jf_AddHeader</a> (<a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse, const char *name, const char *value)</td></tr>
 <tr class="memdesc:a90b5696120d4e1771c18951c103c9609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set HTTP response headers.  <br /></td></tr>
+<tr class="memitem:a9d250000d846cdeaf614c2857c21aea5" id="r_a9d250000d846cdeaf614c2857c21aea5"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="#a9d250000d846cdeaf614c2857c21aea5">jf_GetParameter</a> (const <a class="el" href="structHttpRequest.html">HttpRequest</a> *httpRequest, const char *key)</td></tr>
+<tr class="memdesc:a9d250000d846cdeaf614c2857c21aea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retreives parameter from http request.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
@@ -159,6 +161,31 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8c_a90b5696120d4e1771c18951c103c9609_icgraph.svg" width="244" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a9d250000d846cdeaf614c2857c21aea5" name="a9d250000d846cdeaf614c2857c21aea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d250000d846cdeaf614c2857c21aea5">&#9670;&#160;</a></span>jf_GetParameter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * jf_GetParameter </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structHttpRequest.html">HttpRequest</a> *</td>          <td class="paramname"><span class="paramname"><em>httpRequest</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retreives parameter from http request. </p>
+<dl class="section author"><dt>Author</dt><dd>Avis</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Parameter value; returns value on success, NULL on failure </dd></dl>
 
 </div>
 </div>

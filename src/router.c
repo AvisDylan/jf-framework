@@ -6,6 +6,7 @@
 
 #include <router.h>
 
+#include <stddef.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
@@ -69,11 +70,96 @@ Router* jf_CreateRouter(void) {
     return router;
 }
 
-/* Finds route by method and name */
-static const Route* jf_RouterMatch(Router* router, const char* method, const char* path) {
+/* Finds next segment of path; path is path cursor */
+static size_t jf_RouterNextSegment(const char** path, const char** segment) {
+    const char* current = *path;
+
+    while (*current == '/') {
+        current++;
+    }
+
+    if (*current == '\0')
+        return 0;
+
+    *segment = current;
+
+    while (*current != '\0' && *current != '/') {
+        current++;
+    }
+
+    *path = current;
+
+    return (size_t) (current - *segment);
+}
+
+/* Compares route pattern to request segment and checks for pattern segment placeholder {placeholder} */
+static uint32_t jf_RouterMatchSegment(const char* routeSegemnt, size_t routeSegmentLength, const char* requestSegment,
+                                      size_t requestSegmentLength, HttpRequest* httpRequest) {
+    if (routeSegmentLength >= 2 && routeSegemnt[0] == '{' &&
+        routeSegemnt[routeSegmentLength - 1] == '}') { // place holder found
+        if (httpRequest->paramCount >= 32)
+            return 0;
+
+        size_t keyLength = routeSegmentLength - 2;
+
+        if (keyLength >= sizeof(httpRequest->params[0].key))
+            keyLength = sizeof(httpRequest->params[0].key) - 1;
+
+        memcpy(httpRequest->params[httpRequest->paramCount].key, routeSegemnt + 1, keyLength);
+        httpRequest->params[httpRequest->paramCount].key[keyLength] = '\0';
+
+        if (requestSegmentLength >= sizeof(httpRequest->params[0].value))
+            requestSegmentLength = sizeof(httpRequest->params[0].value) - 1;
+
+        memcpy(httpRequest->params[httpRequest->paramCount].value, requestSegment, requestSegmentLength);
+        httpRequest->params[httpRequest->paramCount].value[requestSegmentLength] = '\0';
+
+        httpRequest->paramCount++;
+
+        return 1;
+    }
+
+    return routeSegmentLength == requestSegmentLength && memcmp(routeSegemnt, requestSegment, routeSegmentLength) == 0;
+}
+
+static uint32_t jf_RouterMatchPath(const Route* route, const char* requestPath, HttpRequest* httpRequest) {
+    const char* routePath = route->path;
+    const char* routeRequest = requestPath;
+
+    httpRequest->paramCount = 0;
+
+    for (;;) {
+        const char* routeSegment;
+
+        size_t routeSegmentLength = jf_RouterNextSegment(&routePath, &routeSegment);
+
+        const char* requestSegment;
+
+        size_t requestSegmentLength = jf_RouterNextSegment(&requestPath, &requestSegment);
+
+        if (routeSegmentLength == 0 && requestSegmentLength == 0)
+            return 1;
+
+        if (routeSegmentLength == 0 || requestSegmentLength == 0)
+            return 0;
+
+        if (!jf_RouterMatchSegment(routeSegment, routeSegmentLength, requestSegment, requestSegmentLength,
+                                   httpRequest)) {
+            return 0;
+        }
+    }
+}
+
+/* Finds route with request */
+static const Route* jf_RouterMatch(Router* router, HttpRequest* httpRequest) {
     for (uint32_t i = 0; i < router->routeCount; i++) {
-        if (strcmp(router->routes[i].method, method) == 0 && strcmp(router->routes[i].method, method) == 0)
-            return &router->routes[i];
+        const Route* route = &router->routes[i];
+
+        if (strcmp(route->method, httpRequest->method) != 0)
+            continue;
+
+        if (jf_RouterMatchPath(route, httpRequest->path, httpRequest))
+            return route;
     }
 
     return NULL;
@@ -86,11 +172,11 @@ static const Route* jf_RouterMatch(Router* router, const char* method, const cha
  *
  * @return Returns 0 on error, 1 on success
  * */
-uint32_t jf_RouterDispatch(Router* router, const HttpRequest* httpRequest, HttpResponse* httpResponse) {
+uint32_t jf_RouterDispatch(Router* router, HttpRequest* httpRequest, HttpResponse* httpResponse) {
     if (!router || !httpRequest || !httpResponse)
         return 0;
 
-    const Route* route = jf_RouterMatch(router, httpRequest->method, httpRequest->path);
+    const Route* route = jf_RouterMatch(router, httpRequest);
 
     if (!route) {
         httpResponse->response = HTTP_NOT_FOUND; // 404

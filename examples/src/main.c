@@ -21,6 +21,14 @@ void storeHandler(const HttpRequest*, HttpResponse* httpResponse) { // Response 
     jf_SendString(httpResponse, "Welcome to Store", HTTP_OK); // Send string
 }
 
+void apiHandler(const HttpRequest* httpRequest, HttpResponse* httpResponse) { // API that prints name
+    const char* name = jf_GetParameter(httpRequest, "name"); // Get value of parameter name
+
+    printf("Hello, %s", name); // Print name
+
+    jf_SendJson(httpResponse, "{\"ok\": true}", HTTP_OK); // Send JSON response
+}
+
 int main(void) {
     Router* router = jf_CreateRouter(); // Create router
 
@@ -28,6 +36,9 @@ int main(void) {
         return 1; // Return 1 if router fails to create
 
     jf_RouterAdd(router, "GET", "/", homeHandler); // Add a GET route on path / handled by homeHandler
+    jf_RouterAdd(router, "GET", "/store", storeHandler); // Add a GET route on path /store handled by storeHandler
+    jf_RouterAdd(router, "POST", "/api/{name}",
+                 apiHandler); // Add a POST route on path /api/{name} handled by apiHandler
 
     Server* server = jf_CreateServer(8080); // Create server with port 8080
 
@@ -39,7 +50,7 @@ int main(void) {
     if (jf_Listen(server) != 0) // Opens listening socket
         return 1; // Return 1 if failure to open listening socket
 
-    printf("Server started!");
+    printf("Server started!\n");
 
     jf_RunServer(server); // Run accept loop
 

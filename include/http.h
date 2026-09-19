@@ -95,6 +95,7 @@ void jf_SendString(HttpResponse* httpResponse, const char* string, HttpStatus st
 void jf_SendHTML(HttpResponse* httpResponse, const char* html, HttpStatus status);
 void jf_SendJson(HttpResponse* httpResponse, const char* json, HttpStatus status);
 void jf_Redirect(HttpResponse* httpResponse, const char* destination, HttpStatus status);
+const char* jf_GetParameter(const HttpRequest* httpRequest, const char* key);
 uint32_t jf_AddHeader(HttpResponse* httpResponse, const char* name, const char* value);
 
 #endif

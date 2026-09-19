@@ -1,0 +1,7 @@
+{
+    "name": "jf-framework",
+    "version": "1.0.0",
+    "dependencies": [
+        "openssl"
+    ] 
+}

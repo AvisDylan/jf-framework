@@ -5,7 +5,7 @@
  * */
 
 #ifndef JF_FRAMEWORK_ROUTER_H
-#define JF_FRAMEWOR_ROUTER_H
+#define JF_FRAMEWORK_ROUTER_H
 
 #include <http.h>
 #include <stdint.h>
@@ -27,7 +27,7 @@ typedef struct {
 
 void jf_RouterDestroy(Router* router);
 uint32_t jf_RouterAdd(Router* router, const char* method, const char* path, route_handler_t handler);
-uint32_t jf_RouterDispatch(Router* router, const HttpRequest* httpRequest, HttpResponse* httpResponse);
+uint32_t jf_RouterDispatch(Router* router, HttpRequest* httpRequest, HttpResponse* httpResponse);
 Router* jf_CreateRouter(void);
 
 #endif

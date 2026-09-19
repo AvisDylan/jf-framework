@@ -17,10 +17,17 @@ set(HEADERS
     include/http.h
 )
 
+find_package(OpenSSL CONFIG REQUIRED)
+
 add_library(jf-framework SHARED ${SOURCES} ${HEADERS})
 
 target_include_directories(jf-framework PUBLIC 
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+target_link_libraries(jf-framework PRIVATE
+    OpenSSL::SSL
+    OpenSSL::Crypto
 )
 
 add_subdirectory(examples)

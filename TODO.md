@@ -1,7 +1,7 @@
 - [x] Create http server
 - [x] Add IPv6 dual stack
 - [x] Create router
-- [ ] Dynamic routes
+- [x] Dynamic routes
 - [x] Http parser
 - [x] Response helpers (e.g jf_SendString, jf_SendHTML, etc)
 - [ ] Logger

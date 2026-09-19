@@ -249,3 +249,22 @@ uint32_t jf_AddHeader(HttpResponse* httpResponse, const char* name, const char* 
 
     return 1;
 }
+
+/**
+ * @author Avis
+ *
+ * @brief Retreives parameter from http request
+ *
+ * @return Parameter value; returns value on success, NULL on failure
+ * */
+const char* jf_GetParameter(const HttpRequest* httpRequest, const char* key) {
+    if (!httpRequest || !key)
+        return NULL;
+
+    for (uint32_t i = 0; i < httpRequest->paramCount; i++) {
+        if (strcmp(httpRequest->params[i].key, key) == 0)
+            return httpRequest->params[i].value;
+    }
+
+    return NULL;
+}
