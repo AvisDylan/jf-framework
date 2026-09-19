@@ -15,6 +15,7 @@ void homeHandler(const HttpRequest*, HttpResponse* httpResponse) { // Response w
     strncpy(httpResponse->contentType, "text/plain", sizeof(httpResponse->contentType) - 1); // Set content type
 
     httpResponse->contentType[sizeof(httpResponse->contentType) - 1] = '\0'; // Null terminate string
+    httpResponse->contentLength = strlen(body); // Set content length
 }
 
 void storeHandler(const HttpRequest*, HttpResponse* httpResponse) { // Response with string helper

@@ -164,7 +164,7 @@ uint32_t jf_SendHttpResponse(int32_t sockfd, const HttpResponse* response) {
 
     headerLength += 2;
 
-    if (send(sockfd, header, headerLength, 0) > 0)
+    if (send(sockfd, header, headerLength, 0) < 0)
         return 0;
 
     if (response->body != NULL && response->contentLength > 0) {
@@ -189,6 +189,7 @@ void jf_Send(HttpResponse* httpResponse, const char* contentType, const char* bo
     strncpy(httpResponse->contentType, contentType, sizeof(httpResponse->contentType) - 1);
 
     httpResponse->contentType[sizeof(httpResponse->contentType) - 1] = '\0';
+    httpResponse->contentLength = strlen(body);
 }
 
 /**
