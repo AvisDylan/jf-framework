@@ -9,6 +9,7 @@ var http_8h =
     [ "jf_Redirect", "http_8h.html#ac03de750c80974c7c3e178fa836f8475", null ],
     [ "jf_Send", "http_8h.html#ab421256ca2d1afc8a320a5dc08f7aa0f", null ],
     [ "jf_SendHTML", "http_8h.html#a80066c977446e11803d28c65ce61fda3", null ],
+    [ "jf_SendHTMLFile", "http_8h.html#a25f32008ce7f12d29d073676fa923637", null ],
     [ "jf_SendHttpResponse", "http_8h.html#a832cda4d2cbd2dcb2a543af11cf8ea53", null ],
     [ "jf_SendJson", "http_8h.html#a35023f916f8a9288f2a199e1b2b52ae1", null ],
     [ "jf_SendString", "http_8h.html#ae3a7f3bff2f9c98b9a5b09c8979b5966", null ]
