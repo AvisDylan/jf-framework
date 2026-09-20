@@ -22,6 +22,10 @@ void storeHandler(const HttpRequest*, HttpResponse* httpResponse) { // Response 
     jf_SendString(httpResponse, "Welcome to Store", HTTP_OK); // Send string
 }
 
+void aboutHandler(const HttpRequest*, HttpResponse* httpResponse) { // Reponse with HTML helper
+    jf_SendHTMLFile(httpResponse, "resources/about.html", HTTP_OK); // Send HTML file
+}
+
 void apiHandler(const HttpRequest* httpRequest, HttpResponse* httpResponse) { // API that prints name
     const char* name = jf_GetParameter(httpRequest, "name"); // Get value of parameter name
 
@@ -38,6 +42,7 @@ int main(void) {
 
     jf_RouterAdd(router, "GET", "/", homeHandler); // Add a GET route on path / handled by homeHandler
     jf_RouterAdd(router, "GET", "/store", storeHandler); // Add a GET route on path /store handled by storeHandler
+    jf_RouterAdd(router, "GET", "/about", aboutHandler); // Add a GET route on path /about handled by aboutHandler
     jf_RouterAdd(router, "POST", "/api/{name}",
                  apiHandler); // Add a POST route on path /api/{name} handled by apiHandler
 

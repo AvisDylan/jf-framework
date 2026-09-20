@@ -239,8 +239,6 @@ void jf_SendHTMLFile(HttpResponse* httpResponse, const char* path, HttpStatus st
         goto CLOSE_FILE;
     }
 
-    jf_Send(httpResponse, "text/html; charset=utf-8", buffer, status);
-
 CLOSE_FILE:
     fclose(file);
 }

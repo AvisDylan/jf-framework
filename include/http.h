@@ -92,6 +92,7 @@ void jf_InitHttpResponse(HttpResponse* response);
 uint32_t jf_SendHttpResponse(int32_t sockfd, const HttpResponse* response);
 void jf_Send(HttpResponse* httpResponse, const char* contentType, const char* body, HttpStatus status);
 void jf_SendString(HttpResponse* httpResponse, const char* string, HttpStatus status);
+void jf_SendHTMLFile(HttpResponse* httpResponse, const char* path, HttpStatus status);
 void jf_SendHTML(HttpResponse* httpResponse, const char* html, HttpStatus status);
 void jf_SendJson(HttpResponse* httpResponse, const char* json, HttpStatus status);
 void jf_Redirect(HttpResponse* httpResponse, const char* destination, HttpStatus status);
