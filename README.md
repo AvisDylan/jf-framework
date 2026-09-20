@@ -9,8 +9,14 @@ JF Framework is licensed under [GPLv3](./License.txt)
 JF Framework is a web framework coded in C as a school project. **NOTE** this project uses UNIX sockets and won't work on Windows.
 
 ### Example
+![screenshot](./screenshots/Screenshot_20260920_214207.png)
+*Image by Avis*
+
+![screenshot](./screenshots/Screenshot_20260920_214214.png)
+*Image by Avis*
+
 ![screenshot](./screenshots/image.png)
-*Image by RootX*
+*Image by Root0x*
 
 ### Progress
 A roadmap can be found in the [TODO](./TODO.md).
