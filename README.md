@@ -1,4 +1,7 @@
 # JF Framework
+
+![contributors](https://contrib.rocks/image?repo=AvisDylan/jf-framework)
+
 ### License
 
 JF Framework is licensed under [GPLv3](./License.txt)
