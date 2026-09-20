@@ -1,5 +1,5 @@
 # JF Framework
-### Top Contributors:
+### Top Contributors
 ![contributors](https://contrib.rocks/image?repo=AvisDylan/jf-framework)
 
 ### License
