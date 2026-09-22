@@ -9,6 +9,7 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#include "export.h"
 
 typedef enum {
     HTTP_CONTINUE = 100,
@@ -90,13 +91,13 @@ typedef struct {
 uint32_t jf_ParseHttpRequest(HttpRequest* httpRequest, const char* buffer, size_t length);
 void jf_InitHttpResponse(HttpResponse* response);
 uint32_t jf_SendHttpResponse(int32_t sockfd, const HttpResponse* response);
-void jf_Send(HttpResponse* httpResponse, const char* contentType, const char* body, HttpStatus status);
-void jf_SendString(HttpResponse* httpResponse, const char* string, HttpStatus status);
-void jf_SendHTMLFile(HttpResponse* httpResponse, const char* path, HttpStatus status);
-void jf_SendHTML(HttpResponse* httpResponse, const char* html, HttpStatus status);
-void jf_SendJson(HttpResponse* httpResponse, const char* json, HttpStatus status);
-void jf_Redirect(HttpResponse* httpResponse, const char* destination, HttpStatus status);
-const char* jf_GetParameter(const HttpRequest* httpRequest, const char* key);
-uint32_t jf_AddHeader(HttpResponse* httpResponse, const char* name, const char* value);
+JF_EXPORT void jf_Send(HttpResponse* httpResponse, const char* contentType, const char* body, HttpStatus status);
+JF_EXPORT void jf_SendString(HttpResponse* httpResponse, const char* string, HttpStatus status);
+JF_EXPORT void jf_SendHTMLFile(HttpResponse* httpResponse, const char* path, HttpStatus status);
+JF_EXPORT void jf_SendHTML(HttpResponse* httpResponse, const char* html, HttpStatus status);
+JF_EXPORT void jf_SendJson(HttpResponse* httpResponse, const char* json, HttpStatus status);
+JF_EXPORT void jf_Redirect(HttpResponse* httpResponse, const char* destination, HttpStatus status);
+JF_EXPORT const char* jf_GetParameter(const HttpRequest* httpRequest, const char* key);
+JF_EXPORT uint32_t jf_AddHeader(HttpResponse* httpResponse, const char* name, const char* value);
 
 #endif

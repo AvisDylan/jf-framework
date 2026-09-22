@@ -10,6 +10,7 @@
 #include <netinet/in.h>
 #include <router.h>
 #include <stdint.h>
+#include "export.h"
 
 typedef struct {
     int32_t clientfd;
@@ -19,16 +20,16 @@ typedef struct {
     Router* router;
 } Server;
 
-Server* jf_CreateServer(int32_t port);
+JF_EXPORT Server* jf_CreateServer(int32_t port);
 
-uint32_t jf_Listen(Server* server);
+JF_EXPORT uint32_t jf_Listen(Server* server);
 
-uint32_t jf_RunServer(Server* server); // was jf_RunSever changed i changed name
+JF_EXPORT uint32_t jf_RunServer(Server* server); // was jf_RunSever changed i changed name
 
 uint32_t jf_HandleClient(Server* server);
 
-void jf_ServerUseRouter(Server* server, Router* router);
+JF_EXPORT void jf_ServerUseRouter(Server* server, Router* router);
 
-void jf_DestroyServer(Server* server);
+JF_EXPORT void jf_DestroyServer(Server* server);
 
 #endif

@@ -114,7 +114,7 @@ uint32_t jf_RunServer(Server* server) {
 /**
  * @authors Victor, Avis
  *
- * @brief
+ * @brief Handles connections
  *
  * @return Returns 1 on failure, 2 on success
  */
@@ -129,7 +129,7 @@ uint32_t jf_HandleClient(Server* server) {
 
     buffer[recieved] = '\0';
 
-    printf("Received: %s\n", buffer); // TODO remove for prod
+    // printf("Received: %s\n", buffer); // TODO remove for prod
 
     HttpRequest httpRequest;
     HttpResponse httpResponse;

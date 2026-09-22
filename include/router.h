@@ -9,6 +9,7 @@
 
 #include <http.h>
 #include <stdint.h>
+#include "export.h"
 
 #define MAX_ROUTES 128
 
@@ -25,9 +26,9 @@ typedef struct {
     uint32_t routeCount;
 } Router;
 
-void jf_RouterDestroy(Router* router);
-uint32_t jf_RouterAdd(Router* router, const char* method, const char* path, route_handler_t handler);
+JF_EXPORT void jf_RouterDestroy(Router* router);
+JF_EXPORT uint32_t jf_RouterAdd(Router* router, const char* method, const char* path, route_handler_t handler);
 uint32_t jf_RouterDispatch(Router* router, HttpRequest* httpRequest, HttpResponse* httpResponse);
-Router* jf_CreateRouter(void);
+JF_EXPORT Router* jf_CreateRouter(void);
 
 #endif

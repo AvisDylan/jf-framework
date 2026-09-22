@@ -48,6 +48,7 @@ target_compile_options(jf-framework PRIVATE
     -fno-delete-null-pointer-checks
     -fwrapv
     -fno-common
+    -fvisibility=hidden
     -flto
     -Wall -Wextra -Wpedantic
     -Wshadow -Wconversion -Wformat=2 -Wformat-security
