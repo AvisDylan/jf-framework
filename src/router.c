@@ -1,3 +1,5 @@
+// Created by Avis on 23/09/2026
+
 /**
  * @file router.c
  *
@@ -6,11 +8,12 @@
 
 #include <router.h>
 
+#include <http.h>
 #include <stddef.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "http.h"
 
 /**
  * @author Avis
@@ -176,6 +179,14 @@ uint32_t jf_RouterDispatch(Router* router, HttpRequest* httpRequest, HttpRespons
     if (!router || !httpRequest || !httpResponse)
         return 0;
 
+    // run middleware
+    for (uint32_t i = 0; i < router->middlewareCount; i++) {
+        int cont = router->middleware[i](httpRequest, httpResponse);
+
+        if (!cont)
+            return 1;
+    }
+
     const Route* route = jf_RouterMatch(router, httpRequest);
 
     if (!route) {
@@ -191,5 +202,23 @@ uint32_t jf_RouterDispatch(Router* router, HttpRequest* httpRequest, HttpRespons
 
     route->handler(httpRequest, httpResponse);
 
+    return 1;
+}
+
+/**
+ * @author Avis
+ *
+ * @brief Adds middleware to router
+ *
+ * @return 0 on failure, 1 on success, 2 if max middleware is exceeded
+ * */
+uint32_t jf_RouterUse(Router* router, middleware_t middleware) {
+    if (!router || !middleware)
+        return 0;
+
+    if (router->middlewareCount >= MAX_MIDDLEWARE)
+        return 2;
+
+    router->middleware[router->middlewareCount++] = middleware;
     return 1;
 }

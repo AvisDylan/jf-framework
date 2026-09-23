@@ -7,15 +7,18 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(SOURCES 
+    src/middleware/logger.c
     src/server.c
     src/router.c
     src/http.c
 )
 
 set(HEADERS
+    include/middleware/logger.h
     include/server.h
     include/router.h
     include/http.h
+    include/export.h
 )
 
 find_package(OpenSSL CONFIG REQUIRED)

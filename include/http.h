@@ -7,9 +7,9 @@
 #ifndef JF_FRAMEWORK_HTTP_H
 #define JF_FRAMEWORK_HTTP_H
 
+#include <export.h>
 #include <stddef.h>
 #include <stdint.h>
-#include "export.h"
 
 typedef enum {
     HTTP_CONTINUE = 100,

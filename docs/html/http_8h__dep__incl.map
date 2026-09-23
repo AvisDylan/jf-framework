@@ -1,16 +1,21 @@
 <map id="include/http.h" name="include/http.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="239,5,338,32"/>
-<area shape="rect" id="Node000002" href="$router_8h.html" title=" " alt="" coords="107,80,217,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,42,186,82,183,77,256,38"/>
-<area shape="rect" id="Node000004" href="$server_8c.html" title=" " alt="" coords="112,229,202,256"/>
-<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="299,44,308,76,313,112,310,149,296,183,277,204,254,219,203,237,202,232,251,214,274,200,292,180,305,147,307,112,303,77,297,49"/>
-<area shape="rect" id="Node000005" href="$router_8c.html" title=" " alt="" coords="194,155,282,181"/>
-<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="282,45,245,156,240,153,277,48"/>
-<area shape="rect" id="Node000006" href="$http_8c.html" title=" " alt="" coords="357,80,434,107"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="320,38,379,79,374,80,319,44"/>
-<area shape="rect" id="Node000003" href="$server_8h.html" title=" " alt="" coords="5,155,119,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="131,118,81,156,78,152,134,114"/>
-<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="163,121,160,230,155,228,159,124"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="187,115,228,154,222,154,185,120"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="92,189,143,228,138,230,90,194"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="330,5,429,32"/>
+<area shape="rect" id="Node000002" href="$logger_8h.html" title=" " alt="" coords="36,80,168,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="320,39,170,83,168,78,324,35"/>
+<area shape="rect" id="Node000003" href="$logger_8c.html" title=" " alt="" coords="5,171,165,197"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="340,41,269,82,108,172,105,168,266,78,345,38"/>
+<area shape="rect" id="Node000004" href="$router_8h.html" title=" " alt="" coords="279,88,390,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="367,44,343,90,339,86,363,47"/>
+<area shape="rect" id="Node000006" href="$server_8c.html" title=" " alt="" coords="294,245,385,272"/>
+<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="408,39,442,71,473,111,483,133,489,155,488,177,479,199,460,220,437,235,386,253,385,248,434,230,457,216,475,196,483,176,484,155,478,134,468,114,438,75,407,44"/>
+<area shape="rect" id="Node000007" href="$router_8c.html" title=" " alt="" coords="377,171,465,197"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="391,44,404,79,422,171,417,170,398,81,389,49"/>
+<area shape="rect" id="Node000008" href="$http_8c.html" title=" " alt="" coords="540,88,616,115"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="425,36,550,87,545,88,425,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="96,136,90,171,85,169,93,140"/>
+<area shape="rect" id="Node000005" href="$server_8h.html" title=" " alt="" coords="188,171,302,197"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="312,124,260,173,257,168,307,126"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="337,129,342,246,337,244,333,132"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="360,123,410,171,405,170,358,128"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="274,205,326,245,321,245,273,210"/>
 </map>

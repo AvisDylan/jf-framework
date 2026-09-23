@@ -7,15 +7,15 @@
 #ifndef JF_FRAMEWORK_SERVER_H
 #define JF_FRAMEWORK_SERVER_H
 
+#include <export.h>
 #include <netinet/in.h>
 #include <router.h>
 #include <stdint.h>
-#include "export.h"
 
 typedef struct {
-    int32_t clientfd;
-    int32_t sockfd;
-    int32_t port;
+    int clientfd;
+    int sockfd;
+    int port;
     struct sockaddr_in6 address;
     Router* router;
 } Server;

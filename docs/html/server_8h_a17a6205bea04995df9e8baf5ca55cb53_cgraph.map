@@ -1,5 +1,5 @@
 <map id="jf_HandleClient" name="jf_HandleClient">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,116,108"/>
+<area shape="rect" id="Node000001" title="Handles connections." alt="" coords="5,81,116,108"/>
 <area shape="rect" id="Node000002" href="$http_8c.html#a19ab722c02cc928f1c06f7924bcac70c" title="Initializes response struct." alt="" coords="170,5,307,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,79,163,42,182,36,177,39,165,46,89,83"/>
 <area shape="rect" id="Node000003" href="$http_8c.html#aa7fec9353eaed3bbc4a10b33280654a4" title="Parses the HTTP request." alt="" coords="167,56,310,83"/>

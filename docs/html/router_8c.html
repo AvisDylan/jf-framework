@@ -92,15 +92,16 @@ $(function(){initNavTree('router_8c.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="router_8h_source.html">router.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="http_8h_source.html">http.h</a>&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="http_8h_source.html">http.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for router.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="router_8c__incl.svg" width="408" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="router_8c__incl.svg" width="499" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
@@ -121,6 +122,8 @@ static uint32_t&#160;</td><td class="memItemRight"><b>jf_RouterMatchPath</b> (co
 static const <a class="el" href="structRoute.html">Route</a> *&#160;</td><td class="memItemRight"><b>jf_RouterMatch</b> (<a class="el" href="structRouter.html">Router</a> *router, <a class="el" href="structHttpRequest.html">HttpRequest</a> *httpRequest)</td></tr>
 <tr class="memitem:aad44b98195baf9579a156f943a143047" id="r_aad44b98195baf9579a156f943a143047"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#aad44b98195baf9579a156f943a143047">jf_RouterDispatch</a> (<a class="el" href="structRouter.html">Router</a> *router, <a class="el" href="structHttpRequest.html">HttpRequest</a> *httpRequest, <a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse)</td></tr>
 <tr class="memdesc:aad44b98195baf9579a156f943a143047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles routes.  <br /></td></tr>
+<tr class="memitem:a5c34496938039a9b7ad14a16bc8a51bb" id="r_a5c34496938039a9b7ad14a16bc8a51bb"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a5c34496938039a9b7ad14a16bc8a51bb">jf_RouterUse</a> (<a class="el" href="structRouter.html">Router</a> *router, middleware_t middleware)</td></tr>
+<tr class="memdesc:a5c34496938039a9b7ad14a16bc8a51bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds middleware to router.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
@@ -233,6 +236,31 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="router_8c_aad44b98195baf9579a156f943a143047_icgraph.svg" width="442" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a5c34496938039a9b7ad14a16bc8a51bb" name="a5c34496938039a9b7ad14a16bc8a51bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c34496938039a9b7ad14a16bc8a51bb">&#9670;&#160;</a></span>jf_RouterUse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t jf_RouterUse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structRouter.html">Router</a> *</td>          <td class="paramname"><span class="paramname"><em>router</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">middleware_t</td>          <td class="paramname"><span class="paramname"><em>middleware</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds middleware to router. </p>
+<dl class="section author"><dt>Author</dt><dd>Avis</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on failure, 1 on success, 2 if max middleware is exceeded </dd></dl>
 
 </div>
 </div>

@@ -5,7 +5,7 @@
 - [x] Http parser
 - [x] Response helpers (e.g jf_SendString, jf_SendHTML, etc)
 - [ ] Logger
-- [ ] Middleware
+- [x] Middleware
 - [ ] Template engine
 - [ ] Static file server
 - [ ] TLS (with openssl)

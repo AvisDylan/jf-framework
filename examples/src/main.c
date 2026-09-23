@@ -1,4 +1,5 @@
 #include <http.h>
+#include <middleware/logger.h>
 #include <router.h>
 #include <server.h>
 #include <stdio.h>
@@ -39,6 +40,9 @@ int main(void) {
 
     if (!router)
         return 1; // Return 1 if router fails to create
+
+    // Add logger middleware
+    jf_RouterUse(router, jf_Logger);
 
     jf_RouterAdd(router, "GET", "/", homeHandler); // Add a GET route on path / handled by homeHandler
     jf_RouterAdd(router, "GET", "/store", storeHandler); // Add a GET route on path /store handled by storeHandler

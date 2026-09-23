@@ -91,17 +91,18 @@ $(function(){initNavTree('http_8h.html','',''); });
   <div class="headertitle"><div class="title">http.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stddef.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="export_8h_source.html">export.h</a>&gt;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for http.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h__incl.svg" width="168" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h__incl.svg" width="260" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h__dep__incl.svg" width="439" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h__dep__incl.svg" width="622" height="278"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="http_8h_source.html">Go to the source code of this file.</a></p>
@@ -166,86 +167,37 @@ Functions</h2></td></tr>
 <tr class="memdesc:a19ab722c02cc928f1c06f7924bcac70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes response struct.  <br /></td></tr>
 <tr class="memitem:a832cda4d2cbd2dcb2a543af11cf8ea53" id="r_a832cda4d2cbd2dcb2a543af11cf8ea53"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a832cda4d2cbd2dcb2a543af11cf8ea53">jf_SendHttpResponse</a> (int32_t sockfd, const <a class="el" href="structHttpResponse.html">HttpResponse</a> *response)</td></tr>
 <tr class="memdesc:a832cda4d2cbd2dcb2a543af11cf8ea53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends HTTP response.  <br /></td></tr>
-<tr class="memitem:ab421256ca2d1afc8a320a5dc08f7aa0f" id="r_ab421256ca2d1afc8a320a5dc08f7aa0f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab421256ca2d1afc8a320a5dc08f7aa0f">jf_Send</a> (<a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse, const char *contentType, const char *body, HttpStatus status)</td></tr>
-<tr class="memdesc:ab421256ca2d1afc8a320a5dc08f7aa0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends HTTP response.  <br /></td></tr>
-<tr class="memitem:ae3a7f3bff2f9c98b9a5b09c8979b5966" id="r_ae3a7f3bff2f9c98b9a5b09c8979b5966"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae3a7f3bff2f9c98b9a5b09c8979b5966">jf_SendString</a> (<a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse, const char *string, HttpStatus status)</td></tr>
-<tr class="memdesc:ae3a7f3bff2f9c98b9a5b09c8979b5966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for jf_Send.  <br /></td></tr>
-<tr class="memitem:a25f32008ce7f12d29d073676fa923637" id="r_a25f32008ce7f12d29d073676fa923637"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a25f32008ce7f12d29d073676fa923637">jf_SendHTMLFile</a> (<a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse, const char *path, HttpStatus status)</td></tr>
-<tr class="memdesc:a25f32008ce7f12d29d073676fa923637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for jf_Send.  <br /></td></tr>
-<tr class="memitem:a80066c977446e11803d28c65ce61fda3" id="r_a80066c977446e11803d28c65ce61fda3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a80066c977446e11803d28c65ce61fda3">jf_SendHTML</a> (<a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse, const char *html, HttpStatus status)</td></tr>
-<tr class="memdesc:a80066c977446e11803d28c65ce61fda3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for jf_Send.  <br /></td></tr>
-<tr class="memitem:a35023f916f8a9288f2a199e1b2b52ae1" id="r_a35023f916f8a9288f2a199e1b2b52ae1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a35023f916f8a9288f2a199e1b2b52ae1">jf_SendJson</a> (<a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse, const char *json, HttpStatus status)</td></tr>
-<tr class="memdesc:a35023f916f8a9288f2a199e1b2b52ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for jf_Send.  <br /></td></tr>
-<tr class="memitem:ac03de750c80974c7c3e178fa836f8475" id="r_ac03de750c80974c7c3e178fa836f8475"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac03de750c80974c7c3e178fa836f8475">jf_Redirect</a> (<a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse, const char *destination, HttpStatus status)</td></tr>
-<tr class="memdesc:ac03de750c80974c7c3e178fa836f8475"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for jf_Send.  <br /></td></tr>
-<tr class="memitem:a9d250000d846cdeaf614c2857c21aea5" id="r_a9d250000d846cdeaf614c2857c21aea5"><td class="memItemLeft">const char *&#160;</td><td class="memItemRight"><a class="el" href="#a9d250000d846cdeaf614c2857c21aea5">jf_GetParameter</a> (const <a class="el" href="structHttpRequest.html">HttpRequest</a> *httpRequest, const char *key)</td></tr>
-<tr class="memdesc:a9d250000d846cdeaf614c2857c21aea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retreives parameter from http request.  <br /></td></tr>
-<tr class="memitem:a90b5696120d4e1771c18951c103c9609" id="r_a90b5696120d4e1771c18951c103c9609"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a90b5696120d4e1771c18951c103c9609">jf_AddHeader</a> (<a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse, const char *name, const char *value)</td></tr>
-<tr class="memdesc:a90b5696120d4e1771c18951c103c9609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set HTTP response headers.  <br /></td></tr>
+<tr class="memitem:aa4cb72b31b4cc2cdbb07b3e3c86f6112" id="r_aa4cb72b31b4cc2cdbb07b3e3c86f6112"><td class="memItemLeft"><a id="aa4cb72b31b4cc2cdbb07b3e3c86f6112" name="aa4cb72b31b4cc2cdbb07b3e3c86f6112"></a>
+&#160;</td><td class="memItemRight"><b>__attribute__</b> ((visibility(&quot;default&quot;))) void <a class="el" href="http_8c.html#ab421256ca2d1afc8a320a5dc08f7aa0f">jf_Send</a>(<a class="el" href="structHttpResponse.html">HttpResponse</a> *httpResponse</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a423bc04e0747c4c120f39b4f95c2ea16" id="r_a423bc04e0747c4c120f39b4f95c2ea16"><td class="memItemLeft"><a id="a423bc04e0747c4c120f39b4f95c2ea16" name="a423bc04e0747c4c120f39b4f95c2ea16"></a>
+const char *&#160;</td><td class="memItemRight"><b>contentType</b></td></tr>
+<tr class="memitem:a59bc1591521ab391f7ec28530792cd39" id="r_a59bc1591521ab391f7ec28530792cd39"><td class="memItemLeft"><a id="a59bc1591521ab391f7ec28530792cd39" name="a59bc1591521ab391f7ec28530792cd39"></a>
+const char const char *&#160;</td><td class="memItemRight"><b>body</b></td></tr>
+<tr class="memitem:a22f5f3c510c7fc9a8e36706bfbaa4fb3" id="r_a22f5f3c510c7fc9a8e36706bfbaa4fb3"><td class="memItemLeft"><a id="a22f5f3c510c7fc9a8e36706bfbaa4fb3" name="a22f5f3c510c7fc9a8e36706bfbaa4fb3"></a>
+const char const char HttpStatus&#160;</td><td class="memItemRight"><b>status</b></td></tr>
+<tr class="memitem:ae1adbce218e7a9d09164012443191d24" id="r_ae1adbce218e7a9d09164012443191d24"><td class="memItemLeft"><a id="ae1adbce218e7a9d09164012443191d24" name="ae1adbce218e7a9d09164012443191d24"></a>
+const char *&#160;</td><td class="memItemRight"><b>string</b></td></tr>
+<tr class="memitem:a3b02c6de5c049804444a246f7fdf46b4" id="r_a3b02c6de5c049804444a246f7fdf46b4"><td class="memItemLeft"><a id="a3b02c6de5c049804444a246f7fdf46b4" name="a3b02c6de5c049804444a246f7fdf46b4"></a>
+const char *&#160;</td><td class="memItemRight"><b>path</b></td></tr>
+<tr class="memitem:a65a2564825311dc0ee8187d3d93422fb" id="r_a65a2564825311dc0ee8187d3d93422fb"><td class="memItemLeft"><a id="a65a2564825311dc0ee8187d3d93422fb" name="a65a2564825311dc0ee8187d3d93422fb"></a>
+const char *&#160;</td><td class="memItemRight"><b>html</b></td></tr>
+<tr class="memitem:a4dd85a1ffd4add568eb3b646e857eadc" id="r_a4dd85a1ffd4add568eb3b646e857eadc"><td class="memItemLeft"><a id="a4dd85a1ffd4add568eb3b646e857eadc" name="a4dd85a1ffd4add568eb3b646e857eadc"></a>
+const char *&#160;</td><td class="memItemRight"><b>json</b></td></tr>
+<tr class="memitem:a85ec2713f151aae36f5bb52e65bac06d" id="r_a85ec2713f151aae36f5bb52e65bac06d"><td class="memItemLeft"><a id="a85ec2713f151aae36f5bb52e65bac06d" name="a85ec2713f151aae36f5bb52e65bac06d"></a>
+const char *&#160;</td><td class="memItemRight"><b>destination</b></td></tr>
+<tr class="memitem:acd3d88da3c0e0313c3645ff34f62f542" id="r_acd3d88da3c0e0313c3645ff34f62f542"><td class="memItemLeft"><a id="acd3d88da3c0e0313c3645ff34f62f542" name="acd3d88da3c0e0313c3645ff34f62f542"></a>
+const char *&#160;</td><td class="memItemRight"><b>key</b></td></tr>
+<tr class="memitem:a8f8f80d37794cde9472343e4487ba3eb" id="r_a8f8f80d37794cde9472343e4487ba3eb"><td class="memItemLeft"><a id="a8f8f80d37794cde9472343e4487ba3eb" name="a8f8f80d37794cde9472343e4487ba3eb"></a>
+const char *&#160;</td><td class="memItemRight"><b>name</b></td></tr>
+<tr class="memitem:a75042fffa85c5911541712dc53ef1d59" id="r_a75042fffa85c5911541712dc53ef1d59"><td class="memItemLeft"><a id="a75042fffa85c5911541712dc53ef1d59" name="a75042fffa85c5911541712dc53ef1d59"></a>
+const char const char *&#160;</td><td class="memItemRight"><b>value</b></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a90b5696120d4e1771c18951c103c9609" name="a90b5696120d4e1771c18951c103c9609"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90b5696120d4e1771c18951c103c9609">&#9670;&#160;</a></span>jf_AddHeader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t jf_AddHeader </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>httpResponse</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>name</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set HTTP response headers. </p>
-<dl class="section author"><dt>Author</dt><dd>Avis</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns 1 on success, 0 on failure </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_a90b5696120d4e1771c18951c103c9609_icgraph.svg" width="244" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a9d250000d846cdeaf614c2857c21aea5" name="a9d250000d846cdeaf614c2857c21aea5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d250000d846cdeaf614c2857c21aea5">&#9670;&#160;</a></span>jf_GetParameter()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char * jf_GetParameter </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structHttpRequest.html">HttpRequest</a> *</td>          <td class="paramname"><span class="paramname"><em>httpRequest</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retreives parameter from http request. </p>
-<dl class="section author"><dt>Author</dt><dd>Avis</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Parameter value; returns value on success, NULL on failure </dd></dl>
-
-</div>
-</div>
 <a id="a19ab722c02cc928f1c06f7924bcac70c" name="a19ab722c02cc928f1c06f7924bcac70c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a19ab722c02cc928f1c06f7924bcac70c">&#9670;&#160;</a></span>jf_InitHttpResponse()</h2>
 
@@ -314,147 +266,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ac03de750c80974c7c3e178fa836f8475" name="ac03de750c80974c7c3e178fa836f8475"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac03de750c80974c7c3e178fa836f8475">&#9670;&#160;</a></span>jf_Redirect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void jf_Redirect </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>httpResponse</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>destination</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HttpStatus</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Wrapper for jf_Send. </p>
-<dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_ac03de750c80974c7c3e178fa836f8475_cgraph.svg" width="244" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="ab421256ca2d1afc8a320a5dc08f7aa0f" name="ab421256ca2d1afc8a320a5dc08f7aa0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab421256ca2d1afc8a320a5dc08f7aa0f">&#9670;&#160;</a></span>jf_Send()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void jf_Send </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>httpResponse</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>contentType</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>body</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HttpStatus</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sends HTTP response. </p>
-<dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_ab421256ca2d1afc8a320a5dc08f7aa0f_icgraph.svg" width="247" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a80066c977446e11803d28c65ce61fda3" name="a80066c977446e11803d28c65ce61fda3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80066c977446e11803d28c65ce61fda3">&#9670;&#160;</a></span>jf_SendHTML()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void jf_SendHTML </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>httpResponse</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>html</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HttpStatus</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Wrapper for jf_Send. </p>
-<dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_a80066c977446e11803d28c65ce61fda3_cgraph.svg" width="226" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a25f32008ce7f12d29d073676fa923637" name="a25f32008ce7f12d29d073676fa923637"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25f32008ce7f12d29d073676fa923637">&#9670;&#160;</a></span>jf_SendHTMLFile()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void jf_SendHTMLFile </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>httpResponse</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HttpStatus</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Wrapper for jf_Send. </p>
-<dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_a25f32008ce7f12d29d073676fa923637_cgraph.svg" width="247" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
 <a id="a832cda4d2cbd2dcb2a543af11cf8ea53" name="a832cda4d2cbd2dcb2a543af11cf8ea53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a832cda4d2cbd2dcb2a543af11cf8ea53">&#9670;&#160;</a></span>jf_SendHttpResponse()</h2>
 
@@ -481,74 +292,6 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_a832cda4d2cbd2dcb2a543af11cf8ea53_icgraph.svg" width="464" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a35023f916f8a9288f2a199e1b2b52ae1" name="a35023f916f8a9288f2a199e1b2b52ae1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35023f916f8a9288f2a199e1b2b52ae1">&#9670;&#160;</a></span>jf_SendJson()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void jf_SendJson </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>httpResponse</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>json</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HttpStatus</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Wrapper for jf_Send. </p>
-<dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_a35023f916f8a9288f2a199e1b2b52ae1_cgraph.svg" width="218" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="ae3a7f3bff2f9c98b9a5b09c8979b5966" name="ae3a7f3bff2f9c98b9a5b09c8979b5966"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3a7f3bff2f9c98b9a5b09c8979b5966">&#9670;&#160;</a></span>jf_SendString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void jf_SendString </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structHttpResponse.html">HttpResponse</a> *</td>          <td class="paramname"><span class="paramname"><em>httpResponse</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>string</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">HttpStatus</td>          <td class="paramname"><span class="paramname"><em>status</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Wrapper for jf_Send. </p>
-<dl class="section author"><dt>Author</dt><dd>Avis </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="http_8h_ae3a7f3bff2f9c98b9a5b09c8979b5966_cgraph.svg" width="224" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

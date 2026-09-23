@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="server_8c.html#a17a6205bea04995df9e8baf5ca55cb53" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="server_8c.html#a17a6205bea04995df9e8baf5ca55cb53" target="_top" xlink:title="Handles connections.">
 <polygon fill="white" stroke="#666666" points="191.75,-20 109,-20 109,0 191.75,0 191.75,-20"/>
 <text xml:space="preserve" text-anchor="middle" x="150.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">jf_HandleClient</text>
 </a>

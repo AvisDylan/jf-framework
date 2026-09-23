@@ -1,5 +1,5 @@
 <map id="jf_HandleClient" name="jf_HandleClient">
-<area shape="rect" id="Node000001" title=" " alt="" coords="151,5,261,32"/>
+<area shape="rect" id="Node000001" title="Handles connections." alt="" coords="151,5,261,32"/>
 <area shape="rect" id="Node000002" href="$server_8c.html#a81d883ca21d6ee510cf144a34b1ef5c9" title="Accept loop." alt="" coords="5,5,103,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,19,103,21,103,16,138,18"/>
 </map>
